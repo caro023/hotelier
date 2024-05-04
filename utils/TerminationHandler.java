@@ -3,16 +3,19 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.*;
+import utils.JsonHandler;
 
 public class TerminationHandler extends Thread {
     private int maxDelay;
     private ExecutorService pool;
     private ServerSocket serverSocket;
-    public TerminationHandler(int maxDelay, ExecutorService pool, ServerSocket serverSocket)
+    private JsonHandler JsonHandler;
+    public TerminationHandler(int maxDelay, ExecutorService pool, ServerSocket serverSocket, JsonHandler JsonHangler)
         {
             this.maxDelay = maxDelay;
             this.pool = pool;
             this.serverSocket = serverSocket;
+            this.JsonHandler = JsonHangler;
         }
         public void run() {
             // Avvio la procedura di terminazione del server.
@@ -30,5 +33,8 @@ public class TerminationHandler extends Thread {
             }
             catch (InterruptedException e) {pool.shutdownNow();}
                  System.out.println("[SERVER] Terminato.");
+
+                 this.JsonHandler.updateHotel();
+                 this.JsonHandler.updateUser();
     }
 }

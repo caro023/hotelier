@@ -7,16 +7,18 @@ import java.util.Properties;
 import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.*;
-import utils.Server;
 import utils.type;
+import utils.JsonHandler;
 
-public class Server implements Runnable {
+public class ClientHandler implements Runnable {
     private Socket socket;
    // private Status status = Status.PLAYING;
+    private JsonHandler jsonHandler;
     private BufferedReader in;
     private PrintWriter out;
-    public Server(Socket socket){
+    public Server(Socket socket, JsonHandler jsonHandler){
         this.socket = socket;
+        this.jsonHandler = jsonHandler;
     }
 
     public void run(){

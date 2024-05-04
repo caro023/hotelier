@@ -22,8 +22,9 @@ import java.net.SocketException;
 import java.util.Properties;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.*;
-import utils.Server;
 import utils.TerminationHandler;
+import utils.JsonHandler;
+import utils.ClientHandler;
 
  public class MainServer{
     // Percorso del file di configurazione del client.
@@ -34,21 +35,29 @@ import utils.TerminationHandler;
     public static int maxDelay;
     public static final ExecutorService pool = Executors.newCachedThreadPool();
     private static ServerSocket serverSocket;
+    private static String fileHotel = "Hotels.json";
+    private static String fileUser = "User.json";
+    private static JsonHandler jsonHandler = new JsonHandler(fileHotel, fileUser);
 
     //multicasto
 
     public static void main(String[] args) {
     try {
         readConfig();
+        /*inizializzare gli hotel nel file json
+         * inizializzare gli utenti nel file json
+         * inizializzare servizio multicast
+         */
+
         serverSocket = new ServerSocket(port);
-        Runtime.getRuntime().addShutdownHook(new TerminationHandler(maxDelay,pool,serverSocket));
+        Runtime.getRuntime().addShutdownHook(new TerminationHandler(maxDelay,pool,serverSocket, jsonHandler));
         System.out.printf("[SERVER] In ascolto sulla porta: %d\n", port);
         while (true) {
             Socket socket = null;
             // Accetto le richieste provenienti dai client.
             try {socket = serverSocket.accept();}
             catch (SocketException e) {break;}
-            pool.execute(new Server(socket));
+            pool.execute(new ClientHandler(socket, jsonHandler));
             }
 
         }
