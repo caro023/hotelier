@@ -2,8 +2,11 @@ package utils;
 
 import java.time.LocalDateTime;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Hotel {
+    
     private int id;
     private String name;
     private String description;
@@ -12,21 +15,16 @@ public class Hotel {
     private String[] services;
     private double rate;
     private Map<String, Double> ratings;
+    private static transient ConcurrentHashMap< String, CopyOnWriteArrayList<Hotel>> hotels = new ConcurrentHashMap<>();
     private transient int totalScore;
     private transient int totalVote;
     private transient LocalDateTime lastTimeVote;
     private transient LocalDateTime avgTimeVote;
 
- public int getId() {
+    public int getId() {
         return id;
     }
 
-    /* Esempio di setter per l'ID
-    public void setId(int id) {
-        this.id = id;
-    }*/
-
-    
     // Getter e setter per il nome
     public String getName() {
         return name;
@@ -89,6 +87,29 @@ public class Hotel {
     public void setRatings(Map<String, Double> ratings) {
         this.ratings = ratings;
     }
+
+    public Hotel searchHotel(String nome, String città){
+            if(Hotel.hotels.containsKey(città)){
+                CopyOnWriteArrayList<Hotel> cittàHotel = hotels.getOrDefault(città,null);
+                for(Hotel hotel : cittàHotel){
+                    if(hotel.getName().equalsIgnoreCase(nome)) return hotel;
+                }
+            }
+            return null;
+        }
+
+    public CopyOnWriteArrayList<Hotel> searchAllHotels(String città){
+        return Hotel.hotels.getOrDefault(città, null);
+    }
+
+    public void setHotel(){
+        String city = this.getCity();
+        hotels.computeIfAbsent( city, c -> new CopyOnWriteArrayList<Hotel>());
+        CopyOnWriteArrayList<Hotel> cityHotels = Hotel.hotels.get(city);
+        cityHotels.add(this);
+    }
+
+
 
     /**
      * @Override

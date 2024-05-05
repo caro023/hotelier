@@ -12,11 +12,11 @@ import utils.JsonHandler;
 
 public class ClientHandler implements Runnable {
     private Socket socket;
-   // private Status status = Status.PLAYING;
+    private User userInstance;
     private JsonHandler jsonHandler;
     private BufferedReader in;
     private PrintWriter out;
-    public Server(Socket socket, JsonHandler jsonHandler){
+    public ClientHandler(Socket socket, JsonHandler jsonHandler){
         this.socket = socket;
         this.jsonHandler = jsonHandler;
     }
@@ -28,15 +28,27 @@ public class ClientHandler implements Runnable {
             while(true){
                 String line = in.readLine().toLowerCase();
                 switch(line){
-                    case "login":
+                    case "register": 
+                    User user = register(username, password);
+                    if(user==null){
+                        System.out.println("errore");
+                    }
+                    else userInstance = user;
+                    break;
+                    case "login":  
+                     userInstance.login(username, password);
                     break;
                     case "logout":
+                     userInstance.logout(username);
                     break;
                     case "searchhotels":
                     break;
                     case "searchallhotels":
                     break;
                     case "insertreview":
+                    if(userInstance==null){
+                     userInstance.insertReview();
+                    }
                     break;
                     case "showmybadges":
                     break;
@@ -49,4 +61,5 @@ public class ClientHandler implements Runnable {
             System.err.printf("[WORKER] Errore: %s\n", e.getMessage());
         }
     }
+
 }

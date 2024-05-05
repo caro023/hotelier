@@ -9,49 +9,32 @@ import com.google.gson.*;
 
 
 public class JsonHandler {
-
-    private ConcurrentHashMap< String, CopyOnWriteArrayList<Hotel>> hotels;
     private static String fileHotel;
     private static String fileUser;
     
     public JsonHandler(String fileHotel, String fileUser){
-        this.hotels = new ConcurrentHashMap<>();
+        //mettere direttamente qui il nome dei file
         JsonHandler.fileHotel = fileHotel;
         JsonHandler.fileUser = fileUser;
         hotelReader();
     }
 
     //mettere hotel e user reader nella stessa funzione
-
         private void hotelReader(){
             try{
                 FileReader reader = new FileReader(fileHotel);
                 Gson gson = new Gson();
-
+              // Hotel hotels = gson.fromJson();
                 for(Hotel hotel : gson.fromJson(reader, Hotel[].class)){
-                    this.addHotel(hotel);
+                    hotel.setHotel();
                 }
 
             }catch(Exception e){
                 System.out.println(e.getMessage());
                 e.printStackTrace();
             }Gson gson = new Gson();
-            Hotel hotels = gson.fromJson();
-        }
+        }    
 
-        public Hotel getHotel(String name, String city){
-            if(this.hotels.containsKey(city)){
-                CopyOnWriteArrayList<Hotel> cityHotel = hotels.getOrDefault(city,null);
-                for(Hotel hotel : cityHotel){
-                    if(hotel.getName().equalsIgnoreCase(name)) return hotel;
-                }
-            }
-            return null;
-        }
-
-        public String[] getListOfCity(){
-            return this.hotels.keySet().toArray(new String[0]);
-        }
         //public get User
 
         //mettere update user e hotel nella stessa funzione
