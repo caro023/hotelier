@@ -14,7 +14,7 @@
  * PARAMETRI DI INPPUT LETTI AUTONOMAMENTE DA FILE TESTUALI
  * COLLEGARE LIBRERIE ESTERNE
  * */
-
+import utils.*;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -22,9 +22,10 @@ import java.net.SocketException;
 import java.util.Properties;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.*;
-import utils.TerminationHandler;
-import utils.JsonHandler;
-import utils.ClientHandler;
+//import utils.TerminationHandler;
+//import utils.JsonHandler;
+//import utils.ClientHandler;
+
 
  public class MainServer{
     // Percorso del file di configurazione del client.
@@ -34,10 +35,9 @@ import utils.ClientHandler;
     public static int port; // 12000
     public static int maxDelay;
     public static final ExecutorService pool = Executors.newCachedThreadPool();
-    private static ServerSocket serverSocket;
-    private static String fileHotel = "Hotels.json";
-    private static String fileUser = "User.json";
-    private static JsonHandler jsonHandler = new JsonHandler(fileHotel, fileUser);
+     private static final String fileHotel = "Hotels.json";
+    private static final String fileUser = "User.json";
+    private static final JsonHandler jsonHandler = new JsonHandler(fileHotel, fileUser);
 
     //multicasto
 
@@ -49,15 +49,15 @@ import utils.ClientHandler;
          * inizializzare servizio multicast
          */
 
-        serverSocket = new ServerSocket(port);
-        Runtime.getRuntime().addShutdownHook(new TerminationHandler(maxDelay,pool,serverSocket, jsonHandler));
+        ServerSocket serverSocket = new ServerSocket(port);
+        Runtime.getRuntime().addShutdownHook(new TerminationHandler(maxDelay,pool, serverSocket, jsonHandler));
         System.out.printf("[SERVER] In ascolto sulla porta: %d\n", port);
         while (true) {
             Socket socket = null;
             // Accetto le richieste provenienti dai client.
             try {socket = serverSocket.accept();}
             catch (SocketException e) {break;}
-            pool.execute(new ClientHandler(socket, jsonHandler));
+            pool.execute(new ClientHandler(socket ));
             }
 
         }

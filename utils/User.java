@@ -1,22 +1,14 @@
 package utils;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.net.Socket;
-import java.util.Properties;
-import java.util.Scanner;
+
 import java.util.concurrent.ConcurrentHashMap;
 
 public class User {
     private static JsonHandler JsonHandler;
     //ricorda gli utenti nel sistema
-    private static ConcurrentHashMap<String, User> registerUser;    
-    private String username;
-    private String password;
+    private static ConcurrentHashMap<String, User> registerUser = new ConcurrentHashMap<String, User>();
+    private final String username;
+    private final String password;
     private type badges;
     private int nReview;
     private boolean isLog;
@@ -48,10 +40,10 @@ public class User {
     //ritorna errore se non è presente
     public static User register(String username, String password){
         //ritorna errore
-            if(registerUser.containsKey(username) || password == null) return null;
+           if(registerUser.containsKey(username) || password == null) return null;
             User newUser = new User(username,password);
             registerUser.put(username, newUser);
-            updateFileUser(registerUser);
+            utils.JsonHandler.updateFileUser(registerUser);
             login(username,password);
             return newUser;
     }
@@ -71,21 +63,26 @@ public class User {
         return "Utente loggato con successo";
     }
 
-    public static String logout(String username){
-        User user = getUser(username);
-        if(user==null || !(user.isLogged())){
+    public String logout(){
+        if(!(this.isLogged())){
             return "Utente non loggato";
         }
-        user.isLog = false;
+        this.isLog = false;
         return "Logout eseguito con successo";
     }
 
     public String insertReview(String nomeHotel,String nomeCittà, double GlobalScore,double[] SingelScores){
-        if (this.isLogged()){
+        if (!(this.isLogged())) return "Errore";
+        Hotel hotel = Hotel.searchHotel(nomeHotel,nomeCittà);
+        if(hotel==null) return "Hotel non esiste";
+        /*
+         * inserire il punteggio
+         * aggiornare il rank 
+         */
         nReview = nReview+1;
         setBadge();
         return "";
-        }
+        
     }
 
     private void setBadge(){
@@ -104,7 +101,7 @@ public class User {
                 break;
             }
         }
-        else { }
+        //else { System.in.out("non sei loggato"); };
     }
 
     public type showMyBadges(){

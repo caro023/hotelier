@@ -19,6 +19,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.Objects;
 import java.util.Properties;
 import java.util.Scanner;
 import utils.type;
@@ -33,19 +34,16 @@ public class MainClient{
     public static int port; // 12000
 
     // Socket e relativi stream di input/output.
-    private static Scanner scanner = new Scanner(System.in);
-    private static Socket socket;
-    private static BufferedReader in;
-    private static PrintWriter out;
+    private static final Scanner scanner = new Scanner(System.in);
 
-    //multicasto
+    //multicast
 
     public static void main(String[] args) {
     try {
         readConfig();
-        socket = new Socket(hostname, port);
-        in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        out = new PrintWriter(socket.getOutputStream(), true);
+        Socket socket = new Socket(hostname, port);
+        BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
         while (true) {
                 //invio il comando
                 String cmd = scanner.nextLine();
@@ -53,7 +51,11 @@ public class MainClient{
                 
                 //risposta del server
                 String line = in.readLine();
-                System.out.printf(line);
+                System.out.println(line);
+
+                if(Objects.equals(cmd, "logout")){
+                    break;
+                }
             }
         }
         catch (Exception e) {

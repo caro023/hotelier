@@ -1,8 +1,5 @@
 package utils;
-import utils.Hotel;
-import utils.User;
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import com.google.gson.*;
@@ -32,7 +29,7 @@ public class JsonHandler {
             }catch(Exception e){
                 System.out.println(e.getMessage());
                 e.printStackTrace();
-            }Gson gson = new Gson();
+            }
         }    
 
         //public get User
@@ -45,7 +42,7 @@ public class JsonHandler {
 
             try(OutputStream outputStream = new FileOutputStream(jsonFile)){
 
-                outputStream.write(gson.toJson(this.getAllHotels()).getBytes());
+               // outputStream.write(gson.toJson(this.getAllHotels()).getBytes());
                 outputStream.flush();
 
             }catch(IOException e){e.printStackTrace();}

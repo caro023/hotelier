@@ -1,21 +1,21 @@
 package utils;
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.*;
-import utils.JsonHandler;
 
 public class TerminationHandler extends Thread {
-    private int maxDelay;
-    private ExecutorService pool;
-    private ServerSocket serverSocket;
-    private JsonHandler JsonHandler;
-    public TerminationHandler(int maxDelay, ExecutorService pool, ServerSocket serverSocket, JsonHandler JsonHangler)
+    private final int maxDelay;
+    private final ExecutorService pool;
+    private final ServerSocket serverSocket;
+    private final JsonHandler JsonHandler;
+    public TerminationHandler(int maxDelay, ExecutorService pool, ServerSocket serverSocket, JsonHandler JsonHandler)
         {
             this.maxDelay = maxDelay;
             this.pool = pool;
             this.serverSocket = serverSocket;
-            this.JsonHandler = JsonHangler;
+            this.JsonHandler = JsonHandler;
         }
         public void run() {
             // Avvio la procedura di terminazione del server.
@@ -28,13 +28,15 @@ public class TerminationHandler extends Thread {
                 // Faccio terminare il pool di thread.
                 pool.shutdown();
                 try {
-                    if (!pool.awaitTermination(maxDelay, TimeUnit.MILLISECONDS))
-                    pool.shutdownNow();
+                    if (!pool.awaitTermination(maxDelay, TimeUnit.MILLISECONDS)) {
+                        pool.shutdownNow();
+                    }
             }
             catch (InterruptedException e) {pool.shutdownNow();}
                  System.out.println("[SERVER] Terminato.");
 
-                 this.JsonHandler.updateHotel();
-                 this.JsonHandler.updateUser();
+                 this.JsonHandler.updateHotelInfo();
+                 //non è necessario
+               //  this.JsonHandler.updateFileUser();
     }
 }

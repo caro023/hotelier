@@ -15,7 +15,7 @@ public class Hotel {
     private String[] services;
     private double rate;
     private Map<String, Double> ratings;
-    private static transient ConcurrentHashMap< String, CopyOnWriteArrayList<Hotel>> hotels = new ConcurrentHashMap<>();
+    private static final transient ConcurrentHashMap< String, CopyOnWriteArrayList<Hotel>> hotels = new ConcurrentHashMap<>();
     private transient int totalScore;
     private transient int totalVote;
     private transient LocalDateTime lastTimeVote;
@@ -88,7 +88,7 @@ public class Hotel {
         this.ratings = ratings;
     }
 
-    public Hotel searchHotel(String nome, String città){
+    public static Hotel searchHotel(String nome, String città){
             if(Hotel.hotels.containsKey(città)){
                 CopyOnWriteArrayList<Hotel> cittàHotel = hotels.getOrDefault(città,null);
                 for(Hotel hotel : cittàHotel){
@@ -98,7 +98,7 @@ public class Hotel {
             return null;
         }
 
-    public CopyOnWriteArrayList<Hotel> searchAllHotels(String città){
+    public static CopyOnWriteArrayList<Hotel> searchAllHotels(String città){
         return Hotel.hotels.getOrDefault(città, null);
     }
 
