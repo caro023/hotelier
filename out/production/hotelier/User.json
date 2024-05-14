@@ -1,7 +1,49 @@
 [
   {
+    "username": "carolina",
+    "password": "gr",
+    "badges": "RECENSORE",
+    "nReview": 0,
+    "isLog": false
+  },
+  {
     "username": "car",
-    "password": "3",
+    "password": "4",
+    "badges": "RECENSORE",
+    "nReview": 0,
+    "isLog": false
+  },
+  {
+    "username": "5",
+    "password": "e",
+    "badges": "RECENSORE",
+    "nReview": 0,
+    "isLog": false
+  },
+  {
+    "username": "fjej",
+    "password": "je",
+    "badges": "RECENSORE",
+    "nReview": 0,
+    "isLog": true
+  },
+  {
+    "username": "gd",
+    "password": "ed",
+    "badges": "RECENSORE",
+    "nReview": 0,
+    "isLog": false
+  },
+  {
+    "username": "cart",
+    "password": "5",
+    "badges": "RECENSORE",
+    "nReview": 0,
+    "isLog": false
+  },
+  {
+    "username": "tr",
+    "password": "5",
     "badges": "RECENSORE",
     "nReview": 0,
     "isLog": false

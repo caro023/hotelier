@@ -30,32 +30,57 @@ public class ClientHandler implements Runnable {
     }
 
     private void cmd() throws IOException {
-        System.out.println("in attesa di un comando");
-            System.out.println("Waiting");
+        System.out.println("In attesa di un comando");
             String line = in.readLine().toLowerCase();
             String[] splitLine = line.split(" ");
+            System.out.println(splitLine[0]);
             switch(splitLine[0]){
                 case "register":
-                    User user = User.register(splitLine[1], splitLine[2]);
-                    System.out.println("registrazione riuscita");
-                    if(user==null){
-                        System.out.println("errore");
+                    if(!(userInstance == null)) {
+                        out.println("Comando non disponibile, utente già loggato");
+                        return;
                     }
-                    else userInstance = user;
+                    else {
+                        User user = User.register(splitLine[1], splitLine[2]);
+                        if (user == null) {
+                            out.println("registrazione non riuscita");
+                            return;
+                        } else userInstance = user;
+                        out.println("registrazione riuscita");
+                    }
                     break;
                 case "login":
                     //cambia metodo login che restituisce user e passarlo a userInstance
-                    if(splitLine.length!=3) System.out.println("errore");
+                    if(splitLine.length!=3) {
+                        out.println("errore");
+                        return;
+                    }
+                    else if((userInstance!=null)) {
+                        out.println("Comando non disponibile, utente già loggato");
+                        return;
+                    }
                     else{
-                        System.out.println(User.login(splitLine[1], splitLine[2]));
+                        User user = User.login(splitLine[1], splitLine[2], out);
+                        if(user != null){
+                            userInstance = user;
+                        }
                     }
                     break;
                 case "logout":
-                    //controlla se user è nulla
-                    System.out.println( userInstance.logout());
+                    if(userInstance==null) {
+                        out.println("Utente non loggato");
+                        return;
+                    }
+                    else {
+                        out.println("exit");
+                        out.println(userInstance.logout());
+                        status = Status.INATTIVO;}
                     break;
-                case "searchhotels":
-                    Hotel.searchHotel(splitLine[1], splitLine[2]);
+                case "searchhotel":
+
+                    Hotel hotel = Hotel.searchHotel(splitLine[1], splitLine[2]);
+                    if(hotel==null) out.println("Hotel non trovato");
+                    else out.println(hotel);
                     break;
                 case "searchallhotels":
                     Hotel.searchAllHotels(splitLine[1]);
@@ -71,10 +96,17 @@ public class ClientHandler implements Runnable {
                     }
                     break;
                 case "showmybadges":
-                    if(userInstance==null){System.out.println("utente non loggato");}
-                    else {userInstance.showMyBadges();}
+                    if(userInstance==null){out.println("utente non loggato");}
+                    else {out.println(userInstance.showMyBadges());}
+                    break;
+                case "exit":
+                    if(!(userInstance==null)) userInstance.logout();
+                    out.println("exit");
+                    status = Status.INATTIVO;
+                    out.println("Grazie per aver utilizzato i nostri servizi");
                     break;
                 default://scrivi qualcosa
+                    out.println("Comando sconosciuto");
                     break;
             }
         }

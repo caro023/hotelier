@@ -1,12 +1,16 @@
 package utils;
 
 
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class User {
     private static JsonHandler JsonHandler;
     //ricorda gli utenti nel sistema
-    private static ConcurrentHashMap<String, User> registerUser = new ConcurrentHashMap<String, User>();
+    private static final ConcurrentHashMap<String, User> registerUser = new ConcurrentHashMap<String, User>();
     private final String username;
     private final String password;
     private type badges;
@@ -23,6 +27,17 @@ public class User {
 
     private static User getUser(String username){
         return registerUser.getOrDefault(username, null);
+    }
+
+    public void setUser(){
+        String user = this.getUsername();
+        registerUser.putIfAbsent(user, new User(user, password));
+    }
+
+    public static List<User> getAllUsers(){
+        List<User> users = new ArrayList<User>();
+        users.addAll(registerUser.values());
+        return users;
     }
 
     private String getUsername(){
@@ -43,24 +58,33 @@ public class User {
            if(registerUser.containsKey(username) || password == null) return null;
             User newUser = new User(username,password);
             registerUser.put(username, newUser);
-            utils.JsonHandler.updateFileUser(registerUser);
-            login(username,password);
+            login(username,password,null);
             return newUser;
     }
 
-    public static String login(String username, String password){
+    public static User login(String username, String password, PrintWriter out){
         User user = getUser(username);
+        String str = null;
         if(user==null){
-            return "Utente non registrato";
+            str = "Utente non registrato";
         }
         else if(user.isLogged()){
-            return "Utente gia loggato";
+            str = "Utente loggato da un altro dispositivo";
         }
-        else if(password==null || user.getPassword()!=password){
-            return "Password errata o mancante";
+        else if(!(user.getPassword().equals(password))){
+             str = "Password errata o mancante";
         }
-        user.isLog= true;
-        return "Utente loggato con successo";
+        if(str!= null && out !=null){
+            out.println(str);
+            return null;
+        }
+        //se è chiamata da register non può mandare errore
+        user.isLog = true;
+        if(out != null){
+            out.println("Utente loggato con successo");
+        }
+
+        return user;
     }
 
     public String logout(){
@@ -68,7 +92,7 @@ public class User {
             return "Utente non loggato";
         }
         this.isLog = false;
-        return "Logout eseguito con successo";
+        return "Logout eseguito. Grazie per aver utilizzato i nostri servizi.";
     }
 
     public String insertReview(String nomeHotel,String nomeCittà, double GlobalScore,double[] SingelScores){

@@ -35,7 +35,9 @@ public class TerminationHandler extends Thread {
             catch (InterruptedException e) {pool.shutdownNow();}
                  System.out.println("[SERVER] Terminato.");
 
-                 this.JsonHandler.updateHotelInfo();
+               //  this.JsonHandler.hotelWriter();
+                this.JsonHandler.infoWriter("hotel");
+                this.JsonHandler.infoWriter("user");
                  //non è necessario
                //  this.JsonHandler.updateFileUser();
     }

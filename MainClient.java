@@ -51,11 +51,12 @@ public class MainClient{
                 
                 //risposta del server
                 String line = in.readLine();
-                System.out.println(line);
-
-                if(Objects.equals(cmd, "logout")){
+                if(line.equals("exit")) {
+                    System.out.println(in.readLine());
                     break;
                 }
+                System.out.println(line);
+
             }
         }
         catch (Exception e) {

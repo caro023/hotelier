@@ -1,7 +1,9 @@
 package utils;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Map;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -88,22 +90,34 @@ public class Hotel {
         this.ratings = ratings;
     }
 
-    public static Hotel searchHotel(String nome, String città){
-            if(Hotel.hotels.containsKey(città)){
-                CopyOnWriteArrayList<Hotel> cittàHotel = hotels.getOrDefault(città,null);
-                for(Hotel hotel : cittàHotel){
-                    if(hotel.getName().equalsIgnoreCase(nome)) return hotel;
-                }
-            }
-            return null;
+    public static List<Hotel> getAllHotels() {
+        List<Hotel> allHotels = new ArrayList<>();
+        for (CopyOnWriteArrayList<Hotel> cityHotels : hotels.values()) {
+            allHotels.addAll(cityHotels);
         }
+
+        return allHotels;
+    }
+
+    //non è case sensitive, si rinuncia all'ottimizzazione non usando containsekey
+    public static Hotel searchHotel(String nome, String città){
+        if(Hotel.hotels.containsKey(città.toLowerCase())){
+                CopyOnWriteArrayList<Hotel> cittàHotel = hotels.getOrDefault(città.toLowerCase(), null);
+                for (Hotel hotel : cittàHotel) {
+                    if (hotel.getName().equalsIgnoreCase(nome)) return hotel;
+                }
+                //return searchAllHtel(città) e converti in stringa
+            }
+        return null;
+
+    }
 
     public static CopyOnWriteArrayList<Hotel> searchAllHotels(String città){
         return Hotel.hotels.getOrDefault(città, null);
     }
 
     public void setHotel(){
-        String city = this.getCity();
+        String city = this.getCity().toLowerCase();
         hotels.computeIfAbsent( city, c -> new CopyOnWriteArrayList<Hotel>());
         CopyOnWriteArrayList<Hotel> cityHotels = Hotel.hotels.get(city);
         cityHotels.add(this);
