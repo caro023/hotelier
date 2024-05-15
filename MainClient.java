@@ -22,6 +22,8 @@ import java.net.Socket;
 import java.util.Objects;
 import java.util.Properties;
 import java.util.Scanner;
+
+import utils.ClientHandler;
 import utils.type;
 
 public class MainClient{
@@ -35,7 +37,6 @@ public class MainClient{
 
     // Socket e relativi stream di input/output.
     private static final Scanner scanner = new Scanner(System.in);
-
     //multicast
 
     public static void main(String[] args) {
@@ -44,19 +45,25 @@ public class MainClient{
         Socket socket = new Socket(hostname, port);
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+
+        System.out.println(in.readLine().replace("|", "\n"));
+
         while (true) {
                 //invio il comando
                 String cmd = scanner.nextLine();
                 out.println(cmd);
-                
+
+
                 //risposta del server
                 String line = in.readLine();
+                //comando di uscita
                 if(line.equals("exit")) {
                     System.out.println(in.readLine());
                     break;
                 }
-                System.out.println(line);
-
+                 line = line.replace("|", "\n");
+                 System.out.println(line);
+                 System.out.flush();
             }
         }
         catch (Exception e) {
@@ -65,8 +72,6 @@ public class MainClient{
             }
         
     }
-
-    
 
     public static void readConfig() throws FileNotFoundException, IOException {
         InputStream input = MainClient.class.getResourceAsStream(configFile);

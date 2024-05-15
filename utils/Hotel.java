@@ -100,11 +100,13 @@ public class Hotel {
     }
 
     //non è case sensitive, si rinuncia all'ottimizzazione non usando containsekey
-    public static Hotel searchHotel(String nome, String città){
-        if(Hotel.hotels.containsKey(città.toLowerCase())){
-                CopyOnWriteArrayList<Hotel> cittàHotel = hotels.getOrDefault(città.toLowerCase(), null);
+    public static Hotel searchHotel(String nome,String città){
+        if(Hotel.hotels.containsKey(città)){
+                CopyOnWriteArrayList<Hotel> cittàHotel = hotels.getOrDefault(città, null);
                 for (Hotel hotel : cittàHotel) {
-                    if (hotel.getName().equalsIgnoreCase(nome)) return hotel;
+                    if (hotel.getName().equalsIgnoreCase(nome)){
+                        return hotel;
+                    }
                 }
                 //return searchAllHtel(città) e converti in stringa
             }

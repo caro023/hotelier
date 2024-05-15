@@ -78,7 +78,7 @@ public class User {
             out.println(str);
             return null;
         }
-        //se è chiamata da register non può mandare errore
+        //se è chiamata da register user è sempre non nulla
         user.isLog = true;
         if(out != null){
             out.println("Utente loggato con successo");

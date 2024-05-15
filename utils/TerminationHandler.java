@@ -2,6 +2,7 @@ package utils;
 
 import java.io.*;
 import java.net.ServerSocket;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.*;
 
@@ -37,8 +38,12 @@ public class TerminationHandler extends Thread {
 
                //  this.JsonHandler.hotelWriter();
                 this.JsonHandler.infoWriter("hotel");
+                List<User> all = User.getAllUsers();
+                for(User u: all){
+                    if(u.isLogged()){
+                        u.logout();
+                    }
+                }
                 this.JsonHandler.infoWriter("user");
-                 //non è necessario
-               //  this.JsonHandler.updateFileUser();
     }
 }

@@ -25,7 +25,7 @@
     "password": "je",
     "badges": "RECENSORE",
     "nReview": 0,
-    "isLog": true
+    "isLog": false
   },
   {
     "username": "gd",
@@ -44,6 +44,13 @@
   {
     "username": "tr",
     "password": "5",
+    "badges": "RECENSORE",
+    "nReview": 0,
+    "isLog": false
+  },
+  {
+    "username": "hrei",
+    "password": "je",
     "badges": "RECENSORE",
     "nReview": 0,
     "isLog": false
