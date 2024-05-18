@@ -14,6 +14,7 @@ public class JsonHandler {
         //mettere direttamente qui il nome dei file
         JsonHandler.fileHotel = fileHotel;
         JsonHandler.fileUser = fileUser;
+        Hotel.initializeHotels();
         hotelReader();
         userReader();
     }

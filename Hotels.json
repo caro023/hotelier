@@ -1642,6 +1642,200 @@
     }
   },
   {
+    "id": 61,
+    "name": "Hotel Udine 1",
+    "description": "Un grazioso hotel a Udine, in Via del tesoro, 5",
+    "city": "Udine",
+    "phone": "328-3594856",
+    "services": [],
+    "rate": 0.0,
+    "ratings": {
+      "cleaning": 0.0,
+      "position": 0.0,
+      "services": 0.0,
+      "quality": 0.0
+    }
+  },
+  {
+    "id": 62,
+    "name": "Hotel Udine 2",
+    "description": "Un ridente hotel a Udine, in Via Italia, 45",
+    "city": "Udine",
+    "phone": "349-6164021",
+    "services": [
+      "Piscina",
+      "Frigo in camera",
+      "Cancellazione gratuita",
+      "Posto auto",
+      "TV in camera",
+      "Sauna",
+      "Wi-Fi"
+    ],
+    "rate": 0.0,
+    "ratings": {
+      "cleaning": 0.0,
+      "position": 0.0,
+      "services": 0.0,
+      "quality": 0.0
+    }
+  },
+  {
+    "id": 63,
+    "name": "Hotel Udine 3",
+    "description": "Un grazioso hotel a Udine, in Via Leonardo da Vinci, 36",
+    "city": "Udine",
+    "phone": "365-5941474",
+    "services": [
+      "Paga in struttura"
+    ],
+    "rate": 0.0,
+    "ratings": {
+      "cleaning": 0.0,
+      "position": 0.0,
+      "services": 0.0,
+      "quality": 0.0
+    }
+  },
+  {
+    "id": 64,
+    "name": "Hotel Udine 4",
+    "description": "Un bellissimo hotel a Udine, in Via Roma, 22",
+    "city": "Udine",
+    "phone": "365-4968567",
+    "services": [
+      "Piscina",
+      "Wi-Fi",
+      "Cancellazione gratuita",
+      "TV in camera"
+    ],
+    "rate": 0.0,
+    "ratings": {
+      "cleaning": 0.0,
+      "position": 0.0,
+      "services": 0.0,
+      "quality": 0.0
+    }
+  },
+  {
+    "id": 65,
+    "name": "Hotel Udine 5",
+    "description": "Un bellissimo hotel a Udine, in Via della gioia, 74",
+    "city": "Udine",
+    "phone": "313-1972887",
+    "services": [
+      "Frigo in camera",
+      "Sauna"
+    ],
+    "rate": 0.0,
+    "ratings": {
+      "cleaning": 0.0,
+      "position": 0.0,
+      "services": 0.0,
+      "quality": 0.0
+    }
+  },
+  {
+    "id": 66,
+    "name": "Hotel Udine 6",
+    "description": "Un organizzato hotel a Udine, in Via Roma, 26",
+    "city": "Udine",
+    "phone": "323-2099722",
+    "services": [
+      "Piscina",
+      "Wi-Fi",
+      "Palestra",
+      "Sauna"
+    ],
+    "rate": 0.0,
+    "ratings": {
+      "cleaning": 0.0,
+      "position": 0.0,
+      "services": 0.0,
+      "quality": 0.0
+    }
+  },
+  {
+    "id": 67,
+    "name": "Hotel Udine 7",
+    "description": "Un grazioso hotel a Udine, in Via Roma, 7",
+    "city": "Udine",
+    "phone": "387-8334625",
+    "services": [],
+    "rate": 0.0,
+    "ratings": {
+      "cleaning": 0.0,
+      "position": 0.0,
+      "services": 0.0,
+      "quality": 0.0
+    }
+  },
+  {
+    "id": 68,
+    "name": "Hotel Udine 8",
+    "description": "Un organizzato hotel a Udine, in Via Leonardo da Vinci, 41",
+    "city": "Udine",
+    "phone": "349-2943307",
+    "services": [
+      "Posto auto",
+      "Frigo in camera",
+      "Wi-Fi",
+      "Piscina",
+      "Sauna",
+      "Palestra",
+      "Paga in struttura",
+      "TV in camera"
+    ],
+    "rate": 0.0,
+    "ratings": {
+      "cleaning": 0.0,
+      "position": 0.0,
+      "services": 0.0,
+      "quality": 0.0
+    }
+  },
+  {
+    "id": 69,
+    "name": "Hotel Udine 9",
+    "description": "Un ridente hotel a Udine, in Via della fantasia, 93",
+    "city": "Udine",
+    "phone": "385-8808230",
+    "services": [
+      "Servizio in camera",
+      "Paga in struttura",
+      "Frigo in camera"
+    ],
+    "rate": 0.0,
+    "ratings": {
+      "cleaning": 0.0,
+      "position": 0.0,
+      "services": 0.0,
+      "quality": 0.0
+    }
+  },
+  {
+    "id": 70,
+    "name": "Hotel Udine 10",
+    "description": "Un grazioso hotel a Udine, in Via Leonardo da Vinci, 83",
+    "city": "Udine",
+    "phone": "366-6244753",
+    "services": [
+      "Cancellazione gratuita",
+      "Posto auto",
+      "Sauna",
+      "Palestra",
+      "Frigo in camera",
+      "Paga in struttura",
+      "Piscina"
+    ],
+    "rate": 0.0,
+    "ratings": {
+      "cleaning": 0.0,
+      "position": 0.0,
+      "services": 0.0,
+      "quality": 0.0
+    }
+  },
+  {
     "id": 101,
     "name": "Hotel Ancona 1",
     "description": "Un ridente hotel a Ancona, in Via del tesoro, 86",
@@ -1841,200 +2035,6 @@
       "Frigo in camera",
       "Paga in struttura",
       "TV in camera",
-      "Piscina"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 61,
-    "name": "Hotel Udine 1",
-    "description": "Un grazioso hotel a Udine, in Via del tesoro, 5",
-    "city": "Udine",
-    "phone": "328-3594856",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 62,
-    "name": "Hotel Udine 2",
-    "description": "Un ridente hotel a Udine, in Via Italia, 45",
-    "city": "Udine",
-    "phone": "349-6164021",
-    "services": [
-      "Piscina",
-      "Frigo in camera",
-      "Cancellazione gratuita",
-      "Posto auto",
-      "TV in camera",
-      "Sauna",
-      "Wi-Fi"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 63,
-    "name": "Hotel Udine 3",
-    "description": "Un grazioso hotel a Udine, in Via Leonardo da Vinci, 36",
-    "city": "Udine",
-    "phone": "365-5941474",
-    "services": [
-      "Paga in struttura"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 64,
-    "name": "Hotel Udine 4",
-    "description": "Un bellissimo hotel a Udine, in Via Roma, 22",
-    "city": "Udine",
-    "phone": "365-4968567",
-    "services": [
-      "Piscina",
-      "Wi-Fi",
-      "Cancellazione gratuita",
-      "TV in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 65,
-    "name": "Hotel Udine 5",
-    "description": "Un bellissimo hotel a Udine, in Via della gioia, 74",
-    "city": "Udine",
-    "phone": "313-1972887",
-    "services": [
-      "Frigo in camera",
-      "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 66,
-    "name": "Hotel Udine 6",
-    "description": "Un organizzato hotel a Udine, in Via Roma, 26",
-    "city": "Udine",
-    "phone": "323-2099722",
-    "services": [
-      "Piscina",
-      "Wi-Fi",
-      "Palestra",
-      "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 67,
-    "name": "Hotel Udine 7",
-    "description": "Un grazioso hotel a Udine, in Via Roma, 7",
-    "city": "Udine",
-    "phone": "387-8334625",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 68,
-    "name": "Hotel Udine 8",
-    "description": "Un organizzato hotel a Udine, in Via Leonardo da Vinci, 41",
-    "city": "Udine",
-    "phone": "349-2943307",
-    "services": [
-      "Posto auto",
-      "Frigo in camera",
-      "Wi-Fi",
-      "Piscina",
-      "Sauna",
-      "Palestra",
-      "Paga in struttura",
-      "TV in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 69,
-    "name": "Hotel Udine 9",
-    "description": "Un ridente hotel a Udine, in Via della fantasia, 93",
-    "city": "Udine",
-    "phone": "385-8808230",
-    "services": [
-      "Servizio in camera",
-      "Paga in struttura",
-      "Frigo in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 70,
-    "name": "Hotel Udine 10",
-    "description": "Un grazioso hotel a Udine, in Via Leonardo da Vinci, 83",
-    "city": "Udine",
-    "phone": "366-6244753",
-    "services": [
-      "Cancellazione gratuita",
-      "Posto auto",
-      "Sauna",
-      "Palestra",
-      "Frigo in camera",
-      "Paga in struttura",
       "Piscina"
     ],
     "rate": 0.0,
@@ -2457,198 +2457,6 @@
     }
   },
   {
-    "id": 161,
-    "name": "Hotel Potenza 1",
-    "description": "Un bellissimo hotel a Potenza, in Via Napoli, 2",
-    "city": "Potenza",
-    "phone": "371-3333206",
-    "services": [
-      "Cancellazione gratuita",
-      "Posto auto",
-      "Sauna",
-      "Frigo in camera",
-      "TV in camera",
-      "Servizio in camera",
-      "Wi-Fi",
-      "Paga in struttura",
-      "Piscina"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 162,
-    "name": "Hotel Potenza 2",
-    "description": "Un organizzato hotel a Potenza, in Via della fantasia, 28",
-    "city": "Potenza",
-    "phone": "321-8195983",
-    "services": [
-      "Frigo in camera",
-      "Servizio in camera",
-      "Piscina",
-      "Cancellazione gratuita",
-      "Wi-Fi",
-      "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 163,
-    "name": "Hotel Potenza 3",
-    "description": "Un grazioso hotel a Potenza, in Via Cavour, 41",
-    "city": "Potenza",
-    "phone": "339-2785716",
-    "services": [
-      "Posto auto",
-      "Servizio in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 164,
-    "name": "Hotel Potenza 4",
-    "description": "Un ridente hotel a Potenza, in Via Leonardo da Vinci, 19",
-    "city": "Potenza",
-    "phone": "379-1923761",
-    "services": [
-      "Servizio in camera",
-      "Paga in struttura",
-      "Wi-Fi",
-      "Palestra",
-      "TV in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 165,
-    "name": "Hotel Potenza 5",
-    "description": "Un bellissimo hotel a Potenza, in Via Leonardo da Vinci, 94",
-    "city": "Potenza",
-    "phone": "364-4572927",
-    "services": [
-      "Frigo in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 166,
-    "name": "Hotel Potenza 6",
-    "description": "Un bellissimo hotel a Potenza, in Via della gioia, 45",
-    "city": "Potenza",
-    "phone": "354-9008946",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 167,
-    "name": "Hotel Potenza 7",
-    "description": "Un organizzato hotel a Potenza, in Via Italia, 78",
-    "city": "Potenza",
-    "phone": "387-4671888",
-    "services": [
-      "Posto auto",
-      "Paga in struttura",
-      "TV in camera",
-      "Palestra",
-      "Frigo in camera",
-      "Piscina",
-      "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 168,
-    "name": "Hotel Potenza 8",
-    "description": "Un organizzato hotel a Potenza, in Via Leonardo da Vinci, 17",
-    "city": "Potenza",
-    "phone": "360-3861142",
-    "services": [
-      "Frigo in camera",
-      "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 169,
-    "name": "Hotel Potenza 9",
-    "description": "Un grazioso hotel a Potenza, in Via del tesoro, 12",
-    "city": "Potenza",
-    "phone": "393-4353806",
-    "services": [
-      "Sauna",
-      "Frigo in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 170,
-    "name": "Hotel Potenza 10",
-    "description": "Un ridente hotel a Potenza, in Via Cavour, 57",
-    "city": "Potenza",
-    "phone": "380-3671849",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
     "id": 121,
     "name": "Hotel L\u0027Aquila 1",
     "description": "Un ridente hotel a L\u0027Aquila, in Via Napoli, 2",
@@ -2852,6 +2660,198 @@
       "Palestra",
       "Posto auto"
     ],
+    "rate": 0.0,
+    "ratings": {
+      "cleaning": 0.0,
+      "position": 0.0,
+      "services": 0.0,
+      "quality": 0.0
+    }
+  },
+  {
+    "id": 161,
+    "name": "Hotel Potenza 1",
+    "description": "Un bellissimo hotel a Potenza, in Via Napoli, 2",
+    "city": "Potenza",
+    "phone": "371-3333206",
+    "services": [
+      "Cancellazione gratuita",
+      "Posto auto",
+      "Sauna",
+      "Frigo in camera",
+      "TV in camera",
+      "Servizio in camera",
+      "Wi-Fi",
+      "Paga in struttura",
+      "Piscina"
+    ],
+    "rate": 0.0,
+    "ratings": {
+      "cleaning": 0.0,
+      "position": 0.0,
+      "services": 0.0,
+      "quality": 0.0
+    }
+  },
+  {
+    "id": 162,
+    "name": "Hotel Potenza 2",
+    "description": "Un organizzato hotel a Potenza, in Via della fantasia, 28",
+    "city": "Potenza",
+    "phone": "321-8195983",
+    "services": [
+      "Frigo in camera",
+      "Servizio in camera",
+      "Piscina",
+      "Cancellazione gratuita",
+      "Wi-Fi",
+      "Sauna"
+    ],
+    "rate": 0.0,
+    "ratings": {
+      "cleaning": 0.0,
+      "position": 0.0,
+      "services": 0.0,
+      "quality": 0.0
+    }
+  },
+  {
+    "id": 163,
+    "name": "Hotel Potenza 3",
+    "description": "Un grazioso hotel a Potenza, in Via Cavour, 41",
+    "city": "Potenza",
+    "phone": "339-2785716",
+    "services": [
+      "Posto auto",
+      "Servizio in camera"
+    ],
+    "rate": 0.0,
+    "ratings": {
+      "cleaning": 0.0,
+      "position": 0.0,
+      "services": 0.0,
+      "quality": 0.0
+    }
+  },
+  {
+    "id": 164,
+    "name": "Hotel Potenza 4",
+    "description": "Un ridente hotel a Potenza, in Via Leonardo da Vinci, 19",
+    "city": "Potenza",
+    "phone": "379-1923761",
+    "services": [
+      "Servizio in camera",
+      "Paga in struttura",
+      "Wi-Fi",
+      "Palestra",
+      "TV in camera"
+    ],
+    "rate": 0.0,
+    "ratings": {
+      "cleaning": 0.0,
+      "position": 0.0,
+      "services": 0.0,
+      "quality": 0.0
+    }
+  },
+  {
+    "id": 165,
+    "name": "Hotel Potenza 5",
+    "description": "Un bellissimo hotel a Potenza, in Via Leonardo da Vinci, 94",
+    "city": "Potenza",
+    "phone": "364-4572927",
+    "services": [
+      "Frigo in camera"
+    ],
+    "rate": 0.0,
+    "ratings": {
+      "cleaning": 0.0,
+      "position": 0.0,
+      "services": 0.0,
+      "quality": 0.0
+    }
+  },
+  {
+    "id": 166,
+    "name": "Hotel Potenza 6",
+    "description": "Un bellissimo hotel a Potenza, in Via della gioia, 45",
+    "city": "Potenza",
+    "phone": "354-9008946",
+    "services": [],
+    "rate": 0.0,
+    "ratings": {
+      "cleaning": 0.0,
+      "position": 0.0,
+      "services": 0.0,
+      "quality": 0.0
+    }
+  },
+  {
+    "id": 167,
+    "name": "Hotel Potenza 7",
+    "description": "Un organizzato hotel a Potenza, in Via Italia, 78",
+    "city": "Potenza",
+    "phone": "387-4671888",
+    "services": [
+      "Posto auto",
+      "Paga in struttura",
+      "TV in camera",
+      "Palestra",
+      "Frigo in camera",
+      "Piscina",
+      "Sauna"
+    ],
+    "rate": 0.0,
+    "ratings": {
+      "cleaning": 0.0,
+      "position": 0.0,
+      "services": 0.0,
+      "quality": 0.0
+    }
+  },
+  {
+    "id": 168,
+    "name": "Hotel Potenza 8",
+    "description": "Un organizzato hotel a Potenza, in Via Leonardo da Vinci, 17",
+    "city": "Potenza",
+    "phone": "360-3861142",
+    "services": [
+      "Frigo in camera",
+      "Cancellazione gratuita"
+    ],
+    "rate": 0.0,
+    "ratings": {
+      "cleaning": 0.0,
+      "position": 0.0,
+      "services": 0.0,
+      "quality": 0.0
+    }
+  },
+  {
+    "id": 169,
+    "name": "Hotel Potenza 9",
+    "description": "Un grazioso hotel a Potenza, in Via del tesoro, 12",
+    "city": "Potenza",
+    "phone": "393-4353806",
+    "services": [
+      "Sauna",
+      "Frigo in camera"
+    ],
+    "rate": 0.0,
+    "ratings": {
+      "cleaning": 0.0,
+      "position": 0.0,
+      "services": 0.0,
+      "quality": 0.0
+    }
+  },
+  {
+    "id": 170,
+    "name": "Hotel Potenza 10",
+    "description": "Un ridente hotel a Potenza, in Via Cavour, 57",
+    "city": "Potenza",
+    "phone": "380-3671849",
+    "services": [],
     "rate": 0.0,
     "ratings": {
       "cleaning": 0.0,
@@ -4063,12 +4063,12 @@
       "Servizio in camera",
       "Paga in struttura"
     ],
-    "rate": 0.0,
+    "rate": 1.0,
     "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
+      "cleaning": 3.0,
+      "position": 3.0,
+      "services": 3.0,
+      "quality": 3.0
     }
   }
 ]

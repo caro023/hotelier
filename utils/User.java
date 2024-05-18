@@ -95,17 +95,18 @@ public class User {
         return "Logout eseguito. Grazie per aver utilizzato i nostri servizi.";
     }
 
-    public String insertReview(String nomeHotel,String nomeCittà, double GlobalScore,double[] SingelScores){
+    public String insertReview(Hotel hotel,double GlobalScore,double[] SingleScores){
         if (!(this.isLogged())) return "Errore";
-        Hotel hotel = Hotel.searchHotel(nomeHotel,nomeCittà);
-        if(hotel==null) return "Hotel non esiste";
         /*
          * inserire il punteggio
          * aggiornare il rank 
          */
+        hotel.setRate(GlobalScore);
+        hotel.setRatings(SingleScores);
         nReview = nReview+1;
-        setBadge();
-        return "";
+        this.setBadge();
+        //aggiorna il rank
+        return "Recensione inserita con successo";
         
     }
 

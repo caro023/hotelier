@@ -1,5 +1,8 @@
 package utils;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Map;
@@ -81,13 +84,25 @@ public class Hotel {
         this.rate = rate;
     }
 
-    // Getter e setter per le valutazioni
+    public void setVote() {
+        this.totalVote = this.totalVote+1;}
+
+
+        // Getter e setter per le valutazioni
     public Map<String, Double> getRatings() {
         return ratings;
     }
 
-    public void setRatings(Map<String, Double> ratings) {
-        this.ratings = ratings;
+    public void setRatings(double[] singleScores) {
+        this.setVote();
+        this.ratings.put("cleaning", updateAverage(this.ratings.get("cleaning"), singleScores[0]));
+        this.ratings.put("position", updateAverage(this.ratings.get("position"), singleScores[1]));
+        this.ratings.put("services", updateAverage(this.ratings.get("services"), singleScores[2]));
+        this.ratings.put("quality", updateAverage(this.ratings.get("quality"), singleScores[3]));
+    }
+
+    private double updateAverage(double currentAverage, double newScore) {
+        return (currentAverage * (this.totalVote - 1) + newScore) / totalVote;
     }
 
     public static List<Hotel> getAllHotels() {
@@ -120,9 +135,28 @@ public class Hotel {
 
     public void setHotel(){
         String city = this.getCity().toLowerCase();
-        hotels.computeIfAbsent( city, c -> new CopyOnWriteArrayList<Hotel>());
+       /* hotels.computeIfAbsent( city, c -> new CopyOnWriteArrayList<Hotel>());
         CopyOnWriteArrayList<Hotel> cityHotels = Hotel.hotels.get(city);
-        cityHotels.add(this);
+        cityHotels.add(this);*/
+
+        if (hotels.containsKey(city)) {
+            CopyOnWriteArrayList<Hotel> cityHotels = hotels.get(city);
+            cityHotels.add(this);
+        } else {
+            System.out.println("City not supported: " + city);
+        }
+    }
+
+    public static void initializeHotels() {
+        String listCity = "city.txt";
+        try (BufferedReader br = new BufferedReader(new FileReader(listCity))) {
+            String city;
+            while ((city = br.readLine()) != null) {
+                hotels.put(city.trim().toLowerCase(), new CopyOnWriteArrayList<Hotel>());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 

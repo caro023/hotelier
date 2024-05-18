@@ -97,7 +97,7 @@ public class ClientHandler implements Runnable {
                         return;
                     }
                     if(userInstance==null) {
-                        output("Utente non loggato");
+                        output("Utente non loggato\n");
                         return;
                     }
                     else {
@@ -124,14 +124,25 @@ public class ClientHandler implements Runnable {
                     else output(hotels.toString());
                     break;
                 case "insertreview":
-                    if(userInstance==null){output("utente non loggato\n");}
-                    else if(splitLine.length==8){
-                        double[] SingleScores = new double[4];
-                        for (int i = 4; i < 8; i++) {
-                            SingleScores[i - 4] = Double.parseDouble(splitLine[i]);
-                        }
-                        userInstance.insertReview(splitLine[1], splitLine[2],Double.parseDouble(splitLine[3]), SingleScores);
+                    //inrew "hotel" "città" 1 2 3 4 5
+                    if(userInstance==null){output("Utente non loggato\n");}
+                    hotel = Hotel.searchHotel(args[1],args[3]);
+                    String[] review = args[4].trim().split(" ");
+                    if(hotel==null) {
+                        output("Hotel non trovato\n");
+                        break;
                     }
+                    double[] SingleScores = new double[4];
+                    //controllo se non inserisce numeri
+                    for (int i = 0; i < 4; i++) {
+                         double rating = Double.parseDouble(review[i]);
+                         if(rating<0|| rating>5) {
+                             output("Si accettano solo recensioni tra 1 e 5\n");
+                             break;
+                         }
+                         SingleScores[i] = Double.parseDouble(review[i]);
+                    }
+                    output(userInstance.insertReview(hotel, Double.parseDouble(review[4]), SingleScores));
                     break;
                 case "showmybadges":
                     if(splitLine.length!=1) {
@@ -148,7 +159,7 @@ public class ClientHandler implements Runnable {
                     output("Grazie per aver utilizzato i nostri servizi\n");
                     break;
                 default://scrivi qualcosa
-                    out.println("Comando sconosciuto");
+                    command("err");
                     break;
             }
         }
