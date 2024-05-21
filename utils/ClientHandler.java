@@ -40,7 +40,7 @@ public class ClientHandler implements Runnable {
             str = str + "Benvenuto, questi sono i possibili comandi:\n";
         }
         else{
-             str = str + "Comando non supportato, questi sono i possibili comandi:\n";
+             str = str + "Comando"+cmd+"non supportato\n questi sono i possibili comandi:\n";
         }
         str = str+ "Register <username> <password>\n"
                 +"Login <username> <password>\n"
@@ -58,7 +58,7 @@ public class ClientHandler implements Runnable {
             switch(splitLine[0]){
                 case "register":
                     if(splitLine.length!=3) {
-                        command("err");
+                        command(line);
                         return;
                     }
                     if(!(userInstance == null)) {
@@ -77,7 +77,7 @@ public class ClientHandler implements Runnable {
                 case "login":
                     //cambia metodo login che restituisce user e passarlo a userInstance
                     if(splitLine.length!=3) {
-                        command("err");
+                        command(line);
                         return;
                     }
                     else if((userInstance!=null)) {
@@ -93,7 +93,7 @@ public class ClientHandler implements Runnable {
                     break;
                 case "logout":
                     if(splitLine.length!=1) {
-                        command("err");
+                        command(line);
                         return;
                     }
                     if(userInstance==null) {
@@ -107,7 +107,7 @@ public class ClientHandler implements Runnable {
                     break;
                 case "searchhotel":
                     if(args.length!=4) {
-                        command("err");
+                        command(line);
                         return;
                     }
                     Hotel hotel = Hotel.searchHotel(args[1],args[3]);
@@ -116,7 +116,7 @@ public class ClientHandler implements Runnable {
                     break;
                 case "searchallhotels":
                     if(args.length!=2) {
-                        command("err");
+                        command(line);
                         return;
                     }
                     CopyOnWriteArrayList<Hotel> hotels = Hotel.searchAllHotels(args[1]);
@@ -126,13 +126,16 @@ public class ClientHandler implements Runnable {
                 case "insertreview":
                     //inrew "hotel" "città" 1 2 3 4 5
                     if(userInstance==null){output("Utente non loggato\n");}
-                    hotel = Hotel.searchHotel(args[1],args[3]);
-                    String[] review = args[4].trim().split(" ");
+                    hotel = Hotel.searchHotel(args[1].trim(),args[3].trim());
+
                     if(hotel==null) {
                         output("Hotel non trovato\n");
                         break;
                     }
+                    //controllo se input giusto
                     double[] SingleScores = new double[4];
+                    String[] review = args[4].trim().split(" ");
+                    if(review.length!=5) command(line);
                     //controllo se non inserisce numeri
                     for (int i = 0; i < 4; i++) {
                          double rating = Double.parseDouble(review[i]);
@@ -146,7 +149,7 @@ public class ClientHandler implements Runnable {
                     break;
                 case "showmybadges":
                     if(splitLine.length!=1) {
-                        command("err");
+                        command(line);
                         return;
                     }
                     if(userInstance==null){output("utente non loggato\n");}
@@ -159,7 +162,7 @@ public class ClientHandler implements Runnable {
                     output("Grazie per aver utilizzato i nostri servizi\n");
                     break;
                 default://scrivi qualcosa
-                    command("err");
+                    command(line);
                     break;
             }
         }

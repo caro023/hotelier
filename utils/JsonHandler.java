@@ -9,14 +9,18 @@ import com.google.gson.*;
 public class JsonHandler {
     private static String fileHotel;
     private static String fileUser;
+    private static String fileReview;
 
-    public JsonHandler(String fileHotel, String fileUser){
+    public JsonHandler(String fileHotel, String fileUser, String fileReview){
         //mettere direttamente qui il nome dei file
         JsonHandler.fileHotel = fileHotel;
         JsonHandler.fileUser = fileUser;
+        JsonHandler.fileReview = fileReview;
         Hotel.initializeHotels();
         hotelReader();
+        Review.initializeReview();
         userReader();
+        reviewReader();
     }
 
     //mettere hotel e user reader nella stessa funzione
@@ -43,12 +47,27 @@ public class JsonHandler {
             for(User user : gson.fromJson(reader, User[].class)){
                 user.setUser();
             }
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    private void reviewReader(){
+        try{
+            FileReader reader = new FileReader(fileReview);
+            Gson gson = new Gson();
+            // Hotel hotels = gson.fromJson();
+            for(Review review : gson.fromJson(reader, Review[].class)){
+                review.setReview();
+            }
 
         }catch(Exception e){
             System.out.println(e.getMessage());
             e.printStackTrace();
         }
     }
+
 
  /*   public void hotelWriter(){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -76,6 +95,10 @@ public class JsonHandler {
         else if(tipo.equals("user")){
             jsonFile  = new File(fileUser);
             all = User.getAllUsers();
+        }
+        else if(tipo.equals("review")){
+            jsonFile  = new File(fileReview);
+            all = Review.getAllReviews();
         }
 
         try(OutputStream outputStream = new FileOutputStream(jsonFile)){

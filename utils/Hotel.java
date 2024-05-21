@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -110,7 +111,6 @@ public class Hotel {
         for (CopyOnWriteArrayList<Hotel> cityHotels : hotels.values()) {
             allHotels.addAll(cityHotels);
         }
-
         return allHotels;
     }
 
@@ -176,6 +176,19 @@ public class Hotel {
         for (Map.Entry<String,Double>entry : this.getRatings().entrySet())
             result=result + String.format("%s: %.2f\n", entry.getKey(), entry.getValue());
         return result;
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Hotel hotel = (Hotel) o;
+        return Objects.equals(name, hotel.name) &&
+                Objects.equals(city, hotel.city);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, city);
     }
 
 }

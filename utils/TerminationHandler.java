@@ -45,5 +45,6 @@ public class TerminationHandler extends Thread {
                     }
                 }
                 this.JsonHandler.infoWriter("user");
+                this.JsonHandler.infoWriter("review");
     }
 }

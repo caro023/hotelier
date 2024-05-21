@@ -37,7 +37,8 @@ import java.util.concurrent.*;
     public static final ExecutorService pool = Executors.newCachedThreadPool();
      private static final String fileHotel = "Hotels.json";
     private static final String fileUser = "User.json";
-    private static final JsonHandler jsonHandler = new JsonHandler(fileHotel, fileUser);
+     private static final String fileReview = "Review.json";
+    private static final JsonHandler jsonHandler = new JsonHandler(fileHotel, fileUser, fileReview);
 
     //multicasto
 

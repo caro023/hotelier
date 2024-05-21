@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class User {
@@ -96,18 +97,19 @@ public class User {
     }
 
     public String insertReview(Hotel hotel,double GlobalScore,double[] SingleScores){
-        if (!(this.isLogged())) return "Errore";
+        if (!(this.isLogged())) return "Utente non loggato";
         /*
          * inserire il punteggio
-         * aggiornare il rank 
+         * aggiornare il rank
          */
-        hotel.setRate(GlobalScore);
-        hotel.setRatings(SingleScores);
-        nReview = nReview+1;
-        this.setBadge();
-        //aggiorna il rank
-        return "Recensione inserita con successo";
-        
+        Review rev = Review.addReview(hotel, this, GlobalScore, SingleScores);
+        if(rev != null) {
+            nReview = nReview + 1;
+            this.setBadge();
+            //aggiorna il rank
+            return "Recensione inserita con successo";
+        }
+        return "Recensione non inserita";
     }
 
     private void setBadge(){
@@ -133,5 +135,16 @@ public class User {
         return this.badges;
     }
 
-    
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(username, user.username);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username);
+    }
 }
