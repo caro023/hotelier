@@ -1,8 +1,5 @@
 package utils;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -19,7 +16,7 @@ public class Review {
     private final Hotel hotel;
     private final User user;
     private static final ConcurrentHashMap<Hotel, CopyOnWriteArrayList<Review>> hotelReview = new ConcurrentHashMap<Hotel, CopyOnWriteArrayList<Review>>();
-    private static final long MIN_DAYS_BETWEEN_REVIEWS = 30;
+    private static Integer MIN_DAYS_BETWEEN_REVIEWS = null;
 
     public Review(Hotel hotel, double rate, double[] ratings, String date, User user) {
         this.hotel = hotel;
@@ -29,6 +26,9 @@ public class Review {
         this.user = user;
     }
 
+    public static void setDayReview(Integer min){
+        MIN_DAYS_BETWEEN_REVIEWS = min;
+    }
 
     public void setReview(){
         Hotel hotel = this.getHotel();
@@ -39,6 +39,68 @@ public class Review {
             System.out.println("Hotel not supported: " + hotel);
         }
     }
+
+    public static void initializeHotelScore() {
+        LocalDateTime now = LocalDateTime.now();
+        for (Map.Entry<Hotel, CopyOnWriteArrayList<Review>> entry : hotelReview.entrySet()) {
+            Hotel hotel = entry.getKey();
+            CopyOnWriteArrayList<Review> reviews = entry.getValue();
+            int totalReviews = reviews.size();
+            hotel.setTotalVote(totalReviews);
+            //variabile per il rate medio dell'hotel
+            double totalRate = 0.0;
+            //variabile per la media dei giorni di distanza tra oggi e le recensioni
+            long totalDay = 0;
+            //varibaile per la media dei punteggi singoli
+            double[] ratings = new double[4];
+            for (Review review : reviews) {
+                totalRate += review.getRate();
+                String date = review.getDate();
+                LocalDateTime dateTime = dateTime(date);
+                long day = ChronoUnit.DAYS.between(dateTime, now);
+                totalDay += day;
+                double[] rat = review.getRatings();
+                for (int i = 0; i < 4; i++) {
+                    ratings[i] = ratings[i] + rat[i];
+                }
+            }
+            if(totalReviews > 0) {
+                hotel.setRate(totalRate);
+                LocalDateTime date = now.minusDays(totalDay/totalReviews);
+                hotel.setTimeReview(date);
+                for(Integer i = 0; i < 4; i++) {
+                    ratings[i] /= totalReviews;
+                }
+                hotel.setRatings(ratings);
+                calculateHotelScore(hotel,totalReviews, totalRate/totalReviews,ratings,totalDay);
+            }
+        }
+    }
+
+    public static void calculateHotelScore(Hotel hotel, Integer totalVote, double rate, double[] ratings, long day) {
+        // Pesi per ciascun parametro
+        double weightRate = 0.5;
+        double weightRatings = 0.4;
+        double weightDaysDifference = -0.07; // Peso negativo per penalizzare recensioni vecchie
+        double weightTotalReviews = 0.05;
+        //normalizzo il rate da 0 a 100
+        rate *= 20;
+        double totRatings = 0;
+        for(double rating : ratings){
+            totRatings += rating;
+        }
+        //normalizzo ratings da 0 a 100
+        totRatings *= 5;
+        // Calcolo finale del punteggio
+        double finalScore = (weightRate * rate) +
+                (weightRatings * totRatings) +
+                (weightDaysDifference * day) +
+                (weightTotalReviews * totalVote);
+        //evitare punteggi negativi
+        if(finalScore<0){finalScore=0;}
+        hotel.setTotalScore(finalScore);
+    }
+
 
     public static Review addReview(Hotel hotel, User user,double rate,double [] ratings){
         LocalDateTime now = LocalDateTime.now();
@@ -53,8 +115,8 @@ public class Review {
             }
             Review review = new Review(hotel, rate, ratings, date, user);
             reviews.add(review);
-            hotel.setRate(rate);
-            hotel.setRatings(ratings);
+            hotel.addRate(rate);
+            hotel.addRatings(ratings);
             return review;
         } else {
            // System.out.println("Hotel not supported: " + hotel);
@@ -62,6 +124,7 @@ public class Review {
         }
     }
 
+    //metti  o tutti private o tutti public
     public Hotel getHotel(){
         return this.hotel;
     }
@@ -71,7 +134,15 @@ public class Review {
     }
 
     public String getDate() {
-        return date;
+        return this.date;
+    }
+
+    public double getRate(){
+        return this.rate;
+    }
+
+    public double[] getRatings(){
+        return this.ratings;
     }
 
 
@@ -89,6 +160,7 @@ public class Review {
            hotelReview.put(hotel, new CopyOnWriteArrayList<Review>());
        }
     }
+
     public static String stringTime(LocalDateTime time) {
         // Qui puoi utilizzare qualsiasi formato desiderato per la rappresentazione della data
         return time.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));

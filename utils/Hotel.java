@@ -4,10 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -19,16 +16,42 @@ public class Hotel {
     private String city;
     private String phone;
     private String[] services;
-    private double rate;
-    private Map<String, Double> ratings;
+    private transient double rate = 0;
+    private transient Map<String, Double> ratings = new HashMap<>();
     private static final transient ConcurrentHashMap< String, CopyOnWriteArrayList<Hotel>> hotels = new ConcurrentHashMap<>();
-    private transient int totalScore;
+    private transient double totalScore;
     private transient int totalVote;
-    private transient LocalDateTime lastTimeVote;
-    private transient LocalDateTime avgTimeVote;
+    private transient LocalDateTime timeReview;
 
     public int getId() {
         return id;
+    }
+    public void setTotalScore(double score) {
+        this.totalScore = score;
+    }
+
+    public double getTotalScore() {
+        return this.totalScore;
+    }
+
+    public int getTotalVote() {
+        return this.totalVote;
+    }
+
+    public void setTotalVote(Integer vote){
+        this.totalVote = vote;
+    }
+
+    public LocalDateTime getTimeReview(){
+        return this.timeReview;
+    }
+
+    public void setTimeReview(LocalDateTime time){
+       this.timeReview = time;
+    }
+
+    public void updateVote() {
+        this.totalVote = this.totalVote + 1;
     }
 
     // Getter e setter per il nome
@@ -81,29 +104,37 @@ public class Hotel {
         return rate;
     }
 
-    public void setRate(double rate) {
-        this.rate = rate;
+    public void setRate(double rate){
+        this.rate= rate/totalVote;
     }
 
-    public void setVote() {
-        this.totalVote = this.totalVote+1;}
-
+    public void addRate(double rate) {
+        //controlla che quanod viene chiamato totalVote è diverso da 0
+        this.rate = (((this.rate*this.totalVote-1)+rate)/this.totalVote) ;
+    }
 
         // Getter e setter per le valutazioni
     public Map<String, Double> getRatings() {
         return ratings;
     }
 
-    public void setRatings(double[] singleScores) {
-        this.setVote();
+    public void setRatings(double[] ratings){
+        this.ratings.put("cleaning", ratings[0]);
+        this.ratings.put("service", ratings[1]);
+        this.ratings.put("position", ratings[2]);
+        this.ratings.put("quality", ratings[3]);
+    }
+
+    public void addRatings(double[] singleScores) {
+        this.updateVote();
         this.ratings.put("cleaning", updateAverage(this.ratings.get("cleaning"), singleScores[0]));
-        this.ratings.put("position", updateAverage(this.ratings.get("position"), singleScores[1]));
-        this.ratings.put("services", updateAverage(this.ratings.get("services"), singleScores[2]));
+        this.ratings.put("service", updateAverage(this.ratings.get("position"), singleScores[1]));
+        this.ratings.put("position", updateAverage(this.ratings.get("service"), singleScores[2]));
         this.ratings.put("quality", updateAverage(this.ratings.get("quality"), singleScores[3]));
     }
 
     private double updateAverage(double currentAverage, double newScore) {
-        return (currentAverage * (this.totalVote - 1) + newScore) / totalVote;
+        return (double) Math.round(((currentAverage * (this.totalVote - 1) + newScore) / totalVote) * 100) /100;
     }
 
     public static List<Hotel> getAllHotels() {
@@ -135,16 +166,27 @@ public class Hotel {
 
     public void setHotel(){
         String city = this.getCity().toLowerCase();
-       /* hotels.computeIfAbsent( city, c -> new CopyOnWriteArrayList<Hotel>());
-        CopyOnWriteArrayList<Hotel> cityHotels = Hotel.hotels.get(city);
-        cityHotels.add(this);*/
 
         if (hotels.containsKey(city)) {
             CopyOnWriteArrayList<Hotel> cityHotels = hotels.get(city);
+            this.initializeRatings();
             cityHotels.add(this);
         } else {
             System.out.println("City not supported: " + city);
         }
+    }
+
+    private void initializeRatings() {
+        this.ratings.put("cleaning", 0.0);
+        this.ratings.put("position", 0.0);
+        this.ratings.put("service", 0.0);
+        this.ratings.put("quality", 0.0);
+    }
+
+    public static List<String> getAllCity(){
+        List<String> allCity = new ArrayList<>();
+        allCity.addAll(hotels.keySet());
+        return allCity;
     }
 
     public static void initializeHotels() {
@@ -159,7 +201,12 @@ public class Hotel {
         }
     }
 
-
+    public static void sortHotel(String city){
+        CopyOnWriteArrayList<Hotel> hotelsInCity = Hotel.hotels.getOrDefault(city, null);
+        if (hotelsInCity != null) {
+            hotelsInCity.sort(Comparator.comparingDouble(Hotel::getTotalScore).reversed());
+        }
+    }
 
     /**
      * @Override

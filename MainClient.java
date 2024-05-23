@@ -58,7 +58,7 @@ public class MainClient{
                 String line = in.readLine();
                 //comando di uscita
                 if(line.equals("exit")) {
-                    System.out.println(in.readLine());
+                    System.out.println(in.readLine().replace("|", "\n"));
                     break;
                 }
                  line = line.replace("|", "\n");

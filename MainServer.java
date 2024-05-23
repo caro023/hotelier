@@ -34,8 +34,9 @@ import java.util.concurrent.*;
     public static String hostname; // localhost
     public static int port; // 12000
     public static int maxDelay;
+    public static int minDayReview;
     public static final ExecutorService pool = Executors.newCachedThreadPool();
-     private static final String fileHotel = "Hotels.json";
+    private static final String fileHotel = "Hotels.json";
     private static final String fileUser = "User.json";
      private static final String fileReview = "Review.json";
     private static final JsonHandler jsonHandler = new JsonHandler(fileHotel, fileUser, fileReview);
@@ -51,10 +52,11 @@ import java.util.concurrent.*;
          */
 
         ServerSocket serverSocket = new ServerSocket(port);
+        Review.setDayReview(minDayReview);
         Runtime.getRuntime().addShutdownHook(new TerminationHandler(maxDelay,pool, serverSocket, jsonHandler));
         System.out.printf("[SERVER] In ascolto sulla porta: %d\n", port);
         while (true) {
-            Socket socket = null;
+            Socket socket;
             // Accetto le richieste provenienti dai client.
             try {socket = serverSocket.accept();}
             catch (SocketException e) {break;}
@@ -75,6 +77,7 @@ import java.util.concurrent.*;
         prop.load(input);
         port = Integer.parseInt(prop.getProperty("port"));
         maxDelay = Integer.parseInt(prop.getProperty("maxDelay"));
+        minDayReview = Integer.parseInt(prop.getProperty("minDayReview"));
        // maxDelay = Integer.parseInt(prop.getProperty("maxDelay"));
         input.close();
     }

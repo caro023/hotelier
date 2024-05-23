@@ -40,7 +40,7 @@ public class ClientHandler implements Runnable {
             str = str + "Benvenuto, questi sono i possibili comandi:\n";
         }
         else{
-             str = str + "Comando"+cmd+"non supportato\n questi sono i possibili comandi:\n";
+             str = str + "Comando: "+cmd+"non supportato\n questi sono i possibili comandi:\n";
         }
         str = str+ "Register <username> <password>\n"
                 +"Login <username> <password>\n"
@@ -121,7 +121,13 @@ public class ClientHandler implements Runnable {
                     }
                     CopyOnWriteArrayList<Hotel> hotels = Hotel.searchAllHotels(args[1]);
                     if(hotels==null) output("Città non trovata\n");
-                    else output(hotels.toString());
+                    else{
+                    String allHotel = "";
+                    for (Hotel h : hotels) {
+                        allHotel += h.toString()+"\n";
+                    }
+                    output(allHotel);
+                    }
                     break;
                 case "insertreview":
                     //inrew "hotel" "città" 1 2 3 4 5

@@ -15,12 +15,11 @@ public class JsonHandler {
         //mettere direttamente qui il nome dei file
         JsonHandler.fileHotel = fileHotel;
         JsonHandler.fileUser = fileUser;
+        //se riesci quando serializzi memorizza solo il nome dell'hotel e l'username del recensore e tramite le funzioni get user,gethotel lo inizializzi
         JsonHandler.fileReview = fileReview;
         Hotel.initializeHotels();
         hotelReader();
-        Review.initializeReview();
         userReader();
-        reviewReader();
     }
 
     //mettere hotel e user reader nella stessa funzione
@@ -32,7 +31,12 @@ public class JsonHandler {
                 for(Hotel hotel : gson.fromJson(reader, Hotel[].class)){
                     hotel.setHotel();
                 }
-
+                Review.initializeReview();
+                reviewReader();
+                Review.initializeHotelScore();
+                for(String city: Hotel.getAllCity()){
+                    Hotel.sortHotel(city);
+                }
             }catch(Exception e){
                 System.out.println(e.getMessage());
                 e.printStackTrace();

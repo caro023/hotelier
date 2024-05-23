@@ -14,14 +14,7 @@
       "Servizio in camera",
       "Palestra",
       "Wi-Fi"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 72,
@@ -29,14 +22,7 @@
     "description": "Un grazioso hotel a Reggio-Emilia, in Via del tramonto, 9",
     "city": "Reggio-Emilia",
     "phone": "376-6994764",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 73,
@@ -49,14 +35,7 @@
       "Frigo in camera",
       "Cancellazione gratuita",
       "Wi-Fi"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 74,
@@ -69,14 +48,7 @@
       "Frigo in camera",
       "Paga in struttura",
       "Wi-Fi"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 75,
@@ -86,14 +58,7 @@
     "phone": "348-4578955",
     "services": [
       "Servizio in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 76,
@@ -107,14 +72,7 @@
       "Sauna",
       "Cancellazione gratuita",
       "Servizio in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 77,
@@ -130,14 +88,7 @@
       "Palestra",
       "Posto auto",
       "TV in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 78,
@@ -151,14 +102,7 @@
       "Posto auto",
       "Cancellazione gratuita",
       "Paga in struttura"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 79,
@@ -174,14 +118,7 @@
       "TV in camera",
       "Palestra",
       "Piscina"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 80,
@@ -196,14 +133,7 @@
       "TV in camera",
       "Posto auto",
       "Frigo in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 111,
@@ -213,14 +143,7 @@
     "phone": "341-6349001",
     "services": [
       "Posto auto"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 112,
@@ -232,14 +155,7 @@
       "Piscina",
       "Frigo in camera",
       "Posto auto"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 113,
@@ -247,14 +163,7 @@
     "description": "Un grazioso hotel a Roma, in Via della fantasia, 1",
     "city": "Roma",
     "phone": "332-1286644",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 114,
@@ -269,14 +178,7 @@
       "Palestra",
       "TV in camera",
       "Paga in struttura"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 115,
@@ -289,14 +191,7 @@
       "TV in camera",
       "Cancellazione gratuita",
       "Paga in struttura"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 116,
@@ -308,14 +203,7 @@
       "Cancellazione gratuita",
       "TV in camera",
       "Wi-Fi"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 117,
@@ -323,14 +211,7 @@
     "description": "Un organizzato hotel a Roma, in Via del tramonto, 63",
     "city": "Roma",
     "phone": "369-4805335",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 118,
@@ -348,14 +229,7 @@
       "Cancellazione gratuita",
       "Wi-Fi",
       "Frigo in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 119,
@@ -363,14 +237,7 @@
     "description": "Un grazioso hotel a Roma, in Via Roma, 70",
     "city": "Roma",
     "phone": "396-3273550",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 120,
@@ -383,14 +250,7 @@
       "Frigo in camera",
       "Cancellazione gratuita",
       "Piscina"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 191,
@@ -404,14 +264,7 @@
       "Palestra",
       "Servizio in camera",
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 192,
@@ -422,14 +275,7 @@
     "services": [
       "Sauna",
       "Posto auto"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 193,
@@ -443,14 +289,7 @@
       "Paga in struttura",
       "Palestra",
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 194,
@@ -461,14 +300,7 @@
     "services": [
       "TV in camera",
       "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 195,
@@ -483,14 +315,7 @@
       "Piscina",
       "Frigo in camera",
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 196,
@@ -503,14 +328,7 @@
       "Wi-Fi",
       "Posto auto",
       "TV in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 197,
@@ -528,14 +346,7 @@
       "Wi-Fi",
       "Piscina",
       "Posto auto"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 198,
@@ -546,14 +357,7 @@
     "services": [
       "Cancellazione gratuita",
       "Palestra"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 199,
@@ -566,14 +370,7 @@
       "Wi-Fi",
       "Cancellazione gratuita",
       "Frigo in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 200,
@@ -588,14 +385,7 @@
       "Paga in struttura",
       "Frigo in camera",
       "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 31,
@@ -612,14 +402,7 @@
       "Cancellazione gratuita",
       "Servizio in camera",
       "TV in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 32,
@@ -630,14 +413,7 @@
     "services": [
       "Palestra",
       "Paga in struttura"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 33,
@@ -655,14 +431,7 @@
       "Palestra",
       "Posto auto",
       "Frigo in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 34,
@@ -678,14 +447,7 @@
       "TV in camera",
       "Servizio in camera",
       "Frigo in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 35,
@@ -699,14 +461,7 @@
       "Cancellazione gratuita",
       "Paga in struttura",
       "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 36,
@@ -716,14 +471,7 @@
     "phone": "360-9179865",
     "services": [
       "Piscina"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 37,
@@ -741,14 +489,7 @@
       "Servizio in camera",
       "Posto auto",
       "TV in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 38,
@@ -758,14 +499,7 @@
     "phone": "396-5144061",
     "services": [
       "Posto auto"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 39,
@@ -781,14 +515,7 @@
       "Cancellazione gratuita",
       "Piscina",
       "Frigo in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 40,
@@ -796,14 +523,7 @@
     "description": "Un ridente hotel a Milano, in Via del tramonto, 35",
     "city": "Milano",
     "phone": "320-4042951",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 131,
@@ -815,14 +535,7 @@
       "Sauna",
       "Piscina",
       "Paga in struttura"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 132,
@@ -836,14 +549,7 @@
       "Posto auto",
       "Sauna",
       "TV in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 133,
@@ -857,14 +563,7 @@
       "Piscina",
       "Cancellazione gratuita",
       "Frigo in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 134,
@@ -877,14 +576,7 @@
       "Frigo in camera",
       "Piscina",
       "Servizio in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 135,
@@ -900,14 +592,7 @@
       "Frigo in camera",
       "Palestra",
       "Servizio in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 136,
@@ -921,14 +606,7 @@
       "TV in camera",
       "Frigo in camera",
       "Piscina"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 137,
@@ -939,14 +617,7 @@
     "services": [
       "Sauna",
       "Posto auto"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 138,
@@ -964,14 +635,7 @@
       "Wi-Fi",
       "Posto auto",
       "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 139,
@@ -988,14 +652,7 @@
       "Palestra",
       "TV in camera",
       "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 140,
@@ -1011,14 +668,7 @@
       "Cancellazione gratuita",
       "Piscina",
       "TV in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 41,
@@ -1034,14 +684,7 @@
       "TV in camera",
       "Cancellazione gratuita",
       "Piscina"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 42,
@@ -1051,14 +694,7 @@
     "phone": "321-9383291",
     "services": [
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 43,
@@ -1076,14 +712,7 @@
       "Servizio in camera",
       "TV in camera",
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 44,
@@ -1091,14 +720,7 @@
     "description": "Un bellissimo hotel a Trento, in Via del tramonto, 23",
     "city": "Trento",
     "phone": "395-6577287",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 45,
@@ -1113,14 +735,7 @@
       "Posto auto",
       "Frigo in camera",
       "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 46,
@@ -1128,14 +743,7 @@
     "description": "Un organizzato hotel a Trento, in Via Napoli, 1",
     "city": "Trento",
     "phone": "367-7841594",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 47,
@@ -1153,14 +761,7 @@
       "Piscina",
       "TV in camera",
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 48,
@@ -1176,14 +777,7 @@
       "Palestra",
       "Paga in struttura",
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 49,
@@ -1201,14 +795,7 @@
       "Posto auto",
       "Servizio in camera",
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 50,
@@ -1225,14 +812,7 @@
       "Posto auto",
       "Servizio in camera",
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 181,
@@ -1249,14 +829,7 @@
       "Palestra",
       "Servizio in camera",
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 182,
@@ -1272,14 +845,7 @@
       "Paga in struttura",
       "Cancellazione gratuita",
       "Posto auto"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 183,
@@ -1293,14 +859,7 @@
       "Posto auto",
       "Servizio in camera",
       "Palestra"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 184,
@@ -1310,14 +869,7 @@
     "phone": "388-6288430",
     "services": [
       "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 185,
@@ -1332,14 +884,7 @@
       "Wi-Fi",
       "Cancellazione gratuita",
       "Piscina"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 186,
@@ -1347,14 +892,7 @@
     "description": "Un organizzato hotel a Palermo, in Via del tesoro, 16",
     "city": "Palermo",
     "phone": "368-4561552",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 187,
@@ -1366,14 +904,7 @@
       "Posto auto",
       "Cancellazione gratuita",
       "Paga in struttura"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 188,
@@ -1385,14 +916,7 @@
       "Piscina",
       "Wi-Fi",
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 189,
@@ -1409,14 +933,7 @@
       "Posto auto",
       "Paga in struttura",
       "Servizio in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 190,
@@ -1428,14 +945,7 @@
       "Palestra",
       "Cancellazione gratuita",
       "Piscina"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 21,
@@ -1452,14 +962,7 @@
       "Paga in struttura",
       "Posto auto",
       "Piscina"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 22,
@@ -1474,14 +977,7 @@
       "TV in camera",
       "Sauna",
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 23,
@@ -1491,14 +987,7 @@
     "phone": "333-6061834",
     "services": [
       "Paga in struttura"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 24,
@@ -1516,14 +1005,7 @@
       "Wi-Fi",
       "Posto auto",
       "Servizio in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 25,
@@ -1534,14 +1016,7 @@
     "services": [
       "TV in camera",
       "Wi-Fi"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 26,
@@ -1557,14 +1032,7 @@
       "TV in camera",
       "Servizio in camera",
       "Posto auto"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 27,
@@ -1572,14 +1040,7 @@
     "description": "Un grazioso hotel a Genova, in Via della libertà, 91",
     "city": "Genova",
     "phone": "375-7436203",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 28,
@@ -1597,14 +1058,7 @@
       "Paga in struttura",
       "TV in camera",
       "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 29,
@@ -1617,14 +1071,7 @@
       "Wi-Fi",
       "Piscina",
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 30,
@@ -1632,14 +1079,7 @@
     "description": "Un grazioso hotel a Genova, in Via della fantasia, 97",
     "city": "Genova",
     "phone": "343-6958486",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 61,
@@ -1647,14 +1087,7 @@
     "description": "Un grazioso hotel a Udine, in Via del tesoro, 5",
     "city": "Udine",
     "phone": "328-3594856",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 62,
@@ -1670,14 +1103,7 @@
       "TV in camera",
       "Sauna",
       "Wi-Fi"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 63,
@@ -1687,14 +1113,7 @@
     "phone": "365-5941474",
     "services": [
       "Paga in struttura"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 64,
@@ -1707,14 +1126,7 @@
       "Wi-Fi",
       "Cancellazione gratuita",
       "TV in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 65,
@@ -1725,14 +1137,7 @@
     "services": [
       "Frigo in camera",
       "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 66,
@@ -1745,14 +1150,7 @@
       "Wi-Fi",
       "Palestra",
       "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 67,
@@ -1760,14 +1158,7 @@
     "description": "Un grazioso hotel a Udine, in Via Roma, 7",
     "city": "Udine",
     "phone": "387-8334625",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 68,
@@ -1784,14 +1175,7 @@
       "Palestra",
       "Paga in struttura",
       "TV in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 69,
@@ -1803,14 +1187,7 @@
       "Servizio in camera",
       "Paga in struttura",
       "Frigo in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 70,
@@ -1826,14 +1203,7 @@
       "Frigo in camera",
       "Paga in struttura",
       "Piscina"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 101,
@@ -1848,14 +1218,7 @@
       "Palestra",
       "Paga in struttura",
       "Frigo in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 102,
@@ -1873,14 +1236,7 @@
       "Sauna",
       "Frigo in camera",
       "Wi-Fi"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 103,
@@ -1894,14 +1250,7 @@
       "Cancellazione gratuita",
       "Frigo in camera",
       "Palestra"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 104,
@@ -1912,14 +1261,7 @@
     "services": [
       "Cancellazione gratuita",
       "Piscina"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 105,
@@ -1934,14 +1276,7 @@
       "Cancellazione gratuita",
       "Piscina",
       "Wi-Fi"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 106,
@@ -1953,14 +1288,7 @@
       "Wi-Fi",
       "Servizio in camera",
       "Frigo in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 107,
@@ -1972,14 +1300,7 @@
       "Servizio in camera",
       "Wi-Fi",
       "Palestra"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 108,
@@ -1987,14 +1308,7 @@
     "description": "Un ridente hotel a Ancona, in Via Cavour, 83",
     "city": "Ancona",
     "phone": "359-3864949",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 109,
@@ -2012,14 +1326,7 @@
       "Cancellazione gratuita",
       "Sauna",
       "Palestra"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 110,
@@ -2036,14 +1343,7 @@
       "Paga in struttura",
       "TV in camera",
       "Piscina"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 141,
@@ -2056,14 +1356,7 @@
       "Frigo in camera",
       "Paga in struttura",
       "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 142,
@@ -2081,14 +1374,7 @@
       "Frigo in camera",
       "Wi-Fi",
       "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 143,
@@ -2104,14 +1390,7 @@
       "Frigo in camera",
       "Sauna",
       "Posto auto"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 144,
@@ -2124,14 +1403,7 @@
       "TV in camera",
       "Sauna",
       "Wi-Fi"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 145,
@@ -2143,14 +1415,7 @@
       "Posto auto",
       "Servizio in camera",
       "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 146,
@@ -2164,14 +1429,7 @@
       "Paga in struttura",
       "Posto auto",
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 147,
@@ -2183,14 +1441,7 @@
       "Wi-Fi",
       "TV in camera",
       "Servizio in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 148,
@@ -2208,14 +1459,7 @@
       "Palestra",
       "Sauna",
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 149,
@@ -2231,14 +1475,7 @@
       "Servizio in camera",
       "TV in camera",
       "Paga in struttura"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 150,
@@ -2246,14 +1483,7 @@
     "description": "Un bellissimo hotel a Napoli, in Via della libertà, 26",
     "city": "Napoli",
     "phone": "333-3913769",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 11,
@@ -2269,14 +1499,7 @@
       "Paga in struttura",
       "Wi-Fi",
       "Frigo in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 12,
@@ -2292,14 +1515,7 @@
       "Frigo in camera",
       "Piscina",
       "TV in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 13,
@@ -2311,14 +1527,7 @@
       "Paga in struttura",
       "Servizio in camera",
       "Piscina"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 14,
@@ -2331,14 +1540,7 @@
       "Cancellazione gratuita",
       "TV in camera",
       "Servizio in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 15,
@@ -2354,14 +1556,7 @@
       "Servizio in camera",
       "Posto auto",
       "Wi-Fi"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 16,
@@ -2374,14 +1569,7 @@
       "TV in camera",
       "Piscina",
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 17,
@@ -2399,14 +1587,7 @@
       "Frigo in camera",
       "Palestra",
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 18,
@@ -2417,14 +1598,7 @@
     "services": [
       "TV in camera",
       "Palestra"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 19,
@@ -2432,14 +1606,7 @@
     "description": "Un bellissimo hotel a Torino, in Via Roma, 7",
     "city": "Torino",
     "phone": "334-2052889",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 20,
@@ -2447,14 +1614,7 @@
     "description": "Un grazioso hotel a Torino, in Via della gioia, 33",
     "city": "Torino",
     "phone": "382-4893459",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 121,
@@ -2467,14 +1627,7 @@
       "Sauna",
       "TV in camera",
       "Piscina"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 122,
@@ -2488,14 +1641,7 @@
       "Palestra",
       "Piscina",
       "TV in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 123,
@@ -2512,14 +1658,7 @@
       "Wi-Fi",
       "Palestra",
       "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 124,
@@ -2527,14 +1666,7 @@
     "description": "Un ridente hotel a L\u0027Aquila, in Via Leonardo da Vinci, 20",
     "city": "L\u0027Aquila",
     "phone": "312-5216383",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 125,
@@ -2549,14 +1681,7 @@
       "Frigo in camera",
       "Piscina",
       "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 126,
@@ -2574,14 +1699,7 @@
       "Wi-Fi",
       "Palestra",
       "Servizio in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 127,
@@ -2599,14 +1717,7 @@
       "Wi-Fi",
       "Palestra",
       "TV in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 128,
@@ -2620,14 +1731,7 @@
       "Wi-Fi",
       "Paga in struttura",
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 129,
@@ -2641,14 +1745,7 @@
       "Cancellazione gratuita",
       "Sauna",
       "Posto auto"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 130,
@@ -2659,14 +1756,7 @@
     "services": [
       "Palestra",
       "Posto auto"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 161,
@@ -2684,14 +1774,7 @@
       "Wi-Fi",
       "Paga in struttura",
       "Piscina"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 162,
@@ -2706,14 +1789,7 @@
       "Cancellazione gratuita",
       "Wi-Fi",
       "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 163,
@@ -2724,14 +1800,7 @@
     "services": [
       "Posto auto",
       "Servizio in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 164,
@@ -2745,14 +1814,7 @@
       "Wi-Fi",
       "Palestra",
       "TV in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 165,
@@ -2762,14 +1824,7 @@
     "phone": "364-4572927",
     "services": [
       "Frigo in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 166,
@@ -2777,14 +1832,7 @@
     "description": "Un bellissimo hotel a Potenza, in Via della gioia, 45",
     "city": "Potenza",
     "phone": "354-9008946",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 167,
@@ -2800,14 +1848,7 @@
       "Frigo in camera",
       "Piscina",
       "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 168,
@@ -2818,14 +1859,7 @@
     "services": [
       "Frigo in camera",
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 169,
@@ -2836,14 +1870,7 @@
     "services": [
       "Sauna",
       "Frigo in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 170,
@@ -2851,14 +1878,7 @@
     "description": "Un ridente hotel a Potenza, in Via Cavour, 57",
     "city": "Potenza",
     "phone": "380-3671849",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 91,
@@ -2874,14 +1894,7 @@
       "Cancellazione gratuita",
       "Servizio in camera",
       "Piscina"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 92,
@@ -2893,14 +1906,7 @@
       "Frigo in camera",
       "Piscina",
       "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 93,
@@ -2918,14 +1924,7 @@
       "Palestra",
       "Servizio in camera",
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 94,
@@ -2933,14 +1932,7 @@
     "description": "Un bellissimo hotel a Perugia, in Via Roma, 64",
     "city": "Perugia",
     "phone": "341-9302350",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 95,
@@ -2958,14 +1950,7 @@
       "Servizio in camera",
       "Cancellazione gratuita",
       "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 96,
@@ -2980,14 +1965,7 @@
       "Posto auto",
       "Wi-Fi",
       "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 97,
@@ -3005,14 +1983,7 @@
       "Sauna",
       "Servizio in camera",
       "Paga in struttura"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 98,
@@ -3025,14 +1996,7 @@
       "Cancellazione gratuita",
       "Posto auto",
       "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 99,
@@ -3042,14 +2006,7 @@
     "phone": "321-1126876",
     "services": [
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 100,
@@ -3065,14 +2022,7 @@
       "TV in camera",
       "Frigo in camera",
       "Palestra"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 151,
@@ -3082,14 +2032,7 @@
     "phone": "393-3698614",
     "services": [
       "TV in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 152,
@@ -3104,14 +2047,7 @@
       "Cancellazione gratuita",
       "Sauna",
       "Paga in struttura"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 153,
@@ -3128,14 +2064,7 @@
       "Palestra",
       "Wi-Fi",
       "TV in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 154,
@@ -3150,14 +2079,7 @@
       "Piscina",
       "TV in camera",
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 155,
@@ -3170,14 +2092,7 @@
       "Posto auto",
       "Wi-Fi",
       "Palestra"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 156,
@@ -3191,14 +2106,7 @@
       "TV in camera",
       "Sauna",
       "Wi-Fi"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 157,
@@ -3208,14 +2116,7 @@
     "phone": "311-6326442",
     "services": [
       "Wi-Fi"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 158,
@@ -3233,14 +2134,7 @@
       "Wi-Fi",
       "Frigo in camera",
       "Servizio in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 159,
@@ -3257,14 +2151,7 @@
       "Sauna",
       "Paga in struttura",
       "Piscina"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 160,
@@ -3278,14 +2165,7 @@
       "TV in camera",
       "Servizio in camera",
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 1,
@@ -3297,14 +2177,7 @@
       "TV in camera",
       "Palestra",
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 2,
@@ -3319,14 +2192,7 @@
       "Paga in struttura",
       "Frigo in camera",
       "TV in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 3,
@@ -3334,14 +2200,7 @@
     "description": "Un grazioso hotel a Aosta, in Via Leonardo da Vinci, 87",
     "city": "Aosta",
     "phone": "393-2959804",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 4,
@@ -3349,14 +2208,7 @@
     "description": "Un organizzato hotel a Aosta, in Via Cavour, 37",
     "city": "Aosta",
     "phone": "392-3923265",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 5,
@@ -3373,14 +2225,7 @@
       "Posto auto",
       "TV in camera",
       "Frigo in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 6,
@@ -3388,14 +2233,7 @@
     "description": "Un grazioso hotel a Aosta, in Via della fantasia, 95",
     "city": "Aosta",
     "phone": "363-4167789",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 7,
@@ -3408,14 +2246,7 @@
       "Frigo in camera",
       "Palestra",
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 8,
@@ -3429,14 +2260,7 @@
       "Piscina",
       "TV in camera",
       "Frigo in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 9,
@@ -3444,14 +2268,7 @@
     "description": "Un organizzato hotel a Aosta, in Via della gioia, 98",
     "city": "Aosta",
     "phone": "355-6261636",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 10,
@@ -3463,14 +2280,7 @@
       "Piscina",
       "Cancellazione gratuita",
       "Wi-Fi"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 51,
@@ -3483,14 +2293,7 @@
       "Cancellazione gratuita",
       "Piscina",
       "TV in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 52,
@@ -3498,14 +2301,7 @@
     "description": "Un grazioso hotel a Venezia, in Via Italia, 2",
     "city": "Venezia",
     "phone": "337-1365356",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 53,
@@ -3519,14 +2315,7 @@
       "Frigo in camera",
       "Wi-Fi",
       "Palestra"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 54,
@@ -3543,14 +2332,7 @@
       "Palestra",
       "Sauna",
       "Servizio in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 55,
@@ -3564,14 +2346,7 @@
       "Palestra",
       "Cancellazione gratuita",
       "Servizio in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 56,
@@ -3586,14 +2361,7 @@
       "Frigo in camera",
       "TV in camera",
       "Paga in struttura"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 57,
@@ -3609,14 +2377,7 @@
       "Palestra",
       "Paga in struttura",
       "Wi-Fi"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 58,
@@ -3626,14 +2387,7 @@
     "phone": "317-9168516",
     "services": [
       "Palestra"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 59,
@@ -3646,14 +2400,7 @@
       "TV in camera",
       "Sauna",
       "Wi-Fi"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 60,
@@ -3669,14 +2416,7 @@
       "Paga in struttura",
       "Sauna",
       "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 171,
@@ -3692,14 +2432,7 @@
       "Cancellazione gratuita",
       "Paga in struttura",
       "Wi-Fi"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 172,
@@ -3716,14 +2449,7 @@
       "Posto auto",
       "Paga in struttura",
       "Frigo in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 173,
@@ -3734,14 +2460,7 @@
     "services": [
       "Frigo in camera",
       "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 174,
@@ -3756,14 +2475,7 @@
       "Paga in struttura",
       "Frigo in camera",
       "Servizio in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 175,
@@ -3773,14 +2485,7 @@
     "phone": "360-1713031",
     "services": [
       "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 176,
@@ -3795,14 +2500,7 @@
       "Servizio in camera",
       "Cancellazione gratuita",
       "Posto auto"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 177,
@@ -3810,14 +2508,7 @@
     "description": "Un organizzato hotel a Reggio-Calabria, in Via del tesoro, 71",
     "city": "Reggio-Calabria",
     "phone": "368-1712796",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    "services": []
   },
   {
     "id": 178,
@@ -3831,14 +2522,7 @@
       "Frigo in camera",
       "Piscina",
       "Paga in struttura"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 179,
@@ -3849,14 +2533,7 @@
     "services": [
       "TV in camera",
       "Posto auto"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
     "id": 180,
@@ -3871,160 +2548,22 @@
       "Servizio in camera",
       "Palestra",
       "Posto auto"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+    ]
   },
   {
-    "id": 81,
-    "name": "Hotel Firenze 1",
-    "description": "Un ridente hotel a Firenze, in Via Roma, 53",
+    "id": 90,
+    "name": "Hotel Firenze 10",
+    "description": "Un ridente hotel a Firenze, in Via Roma, 55",
     "city": "Firenze",
-    "phone": "366-4007646",
+    "phone": "395-2583226",
     "services": [
-      "Servizio in camera",
-      "Piscina",
-      "TV in camera"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 82,
-    "name": "Hotel Firenze 2",
-    "description": "Un bellissimo hotel a Firenze, in Via della gioia, 68",
-    "city": "Firenze",
-    "phone": "339-6787075",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 83,
-    "name": "Hotel Firenze 3",
-    "description": "Un bellissimo hotel a Firenze, in Via Roma, 45",
-    "city": "Firenze",
-    "phone": "313-7184050",
-    "services": [
-      "Servizio in camera",
-      "Frigo in camera",
       "TV in camera",
-      "Cancellazione gratuita"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 84,
-    "name": "Hotel Firenze 4",
-    "description": "Un ridente hotel a Firenze, in Via Leonardo da Vinci, 19",
-    "city": "Firenze",
-    "phone": "330-7174828",
-    "services": [],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 85,
-    "name": "Hotel Firenze 5",
-    "description": "Un grazioso hotel a Firenze, in Via del tesoro, 72",
-    "city": "Firenze",
-    "phone": "362-5444724",
-    "services": [
-      "Sauna"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 86,
-    "name": "Hotel Firenze 6",
-    "description": "Un grazioso hotel a Firenze, in Via della fantasia, 21",
-    "city": "Firenze",
-    "phone": "331-5464654",
-    "services": [
+      "Sauna",
       "Frigo in camera",
-      "Piscina",
-      "Wi-Fi"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 87,
-    "name": "Hotel Firenze 7",
-    "description": "Un organizzato hotel a Firenze, in Via Roma, 62",
-    "city": "Firenze",
-    "phone": "391-4208074",
-    "services": [
-      "Servizio in camera",
-      "Wi-Fi"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
-  },
-  {
-    "id": 88,
-    "name": "Hotel Firenze 8",
-    "description": "Un grazioso hotel a Firenze, in Via Leonardo da Vinci, 38",
-    "city": "Firenze",
-    "phone": "319-5757463",
-    "services": [
-      "Frigo in camera",
-      "Piscina",
       "Posto auto",
-      "Paga in struttura",
       "Servizio in camera",
-      "TV in camera",
-      "Wi-Fi"
-    ],
-    "rate": 0.0,
-    "ratings": {
-      "cleaning": 0.0,
-      "position": 0.0,
-      "services": 0.0,
-      "quality": 0.0
-    }
+      "Paga in struttura"
+    ]
   },
   {
     "id": 89,
@@ -4040,35 +2579,96 @@
       "Palestra",
       "Frigo in camera",
       "Wi-Fi"
-    ],
-    "rate": 5.0,
-    "ratings": {
-      "cleaning": 1.0,
-      "position": 2.0,
-      "services": 3.0,
-      "quality": 4.0
-    }
+    ]
   },
   {
-    "id": 90,
-    "name": "Hotel Firenze 10",
-    "description": "Un ridente hotel a Firenze, in Via Roma, 55",
+    "id": 88,
+    "name": "Hotel Firenze 8",
+    "description": "Un grazioso hotel a Firenze, in Via Leonardo da Vinci, 38",
     "city": "Firenze",
-    "phone": "395-2583226",
+    "phone": "319-5757463",
     "services": [
-      "TV in camera",
-      "Sauna",
       "Frigo in camera",
+      "Piscina",
       "Posto auto",
+      "Paga in struttura",
       "Servizio in camera",
-      "Paga in struttura"
-    ],
-    "rate": 5.0,
-    "ratings": {
-      "cleaning": 1.0,
-      "position": 2.0,
-      "services": 3.0,
-      "quality": 4.0
-    }
+      "TV in camera",
+      "Wi-Fi"
+    ]
+  },
+  {
+    "id": 81,
+    "name": "Hotel Firenze 1",
+    "description": "Un ridente hotel a Firenze, in Via Roma, 53",
+    "city": "Firenze",
+    "phone": "366-4007646",
+    "services": [
+      "Servizio in camera",
+      "Piscina",
+      "TV in camera"
+    ]
+  },
+  {
+    "id": 82,
+    "name": "Hotel Firenze 2",
+    "description": "Un bellissimo hotel a Firenze, in Via della gioia, 68",
+    "city": "Firenze",
+    "phone": "339-6787075",
+    "services": []
+  },
+  {
+    "id": 83,
+    "name": "Hotel Firenze 3",
+    "description": "Un bellissimo hotel a Firenze, in Via Roma, 45",
+    "city": "Firenze",
+    "phone": "313-7184050",
+    "services": [
+      "Servizio in camera",
+      "Frigo in camera",
+      "TV in camera",
+      "Cancellazione gratuita"
+    ]
+  },
+  {
+    "id": 84,
+    "name": "Hotel Firenze 4",
+    "description": "Un ridente hotel a Firenze, in Via Leonardo da Vinci, 19",
+    "city": "Firenze",
+    "phone": "330-7174828",
+    "services": []
+  },
+  {
+    "id": 85,
+    "name": "Hotel Firenze 5",
+    "description": "Un grazioso hotel a Firenze, in Via del tesoro, 72",
+    "city": "Firenze",
+    "phone": "362-5444724",
+    "services": [
+      "Sauna"
+    ]
+  },
+  {
+    "id": 86,
+    "name": "Hotel Firenze 6",
+    "description": "Un grazioso hotel a Firenze, in Via della fantasia, 21",
+    "city": "Firenze",
+    "phone": "331-5464654",
+    "services": [
+      "Frigo in camera",
+      "Piscina",
+      "Wi-Fi"
+    ]
+  },
+  {
+    "id": 87,
+    "name": "Hotel Firenze 7",
+    "description": "Un organizzato hotel a Firenze, in Via Roma, 62",
+    "city": "Firenze",
+    "phone": "391-4208074",
+    "services": [
+      "Servizio in camera",
+      "Wi-Fi"
+    ]
   }
 ]

@@ -1,5 +1,71 @@
 [
   {
+    "rate": 1.0,
+    "ratings": [
+      3.0,
+      2.0,
+      4.0,
+      5.0
+    ],
+    "date": "2024-05-23 12:48",
+    "hotel": {
+      "id": 88,
+      "name": "Hotel Firenze 8",
+      "description": "Un grazioso hotel a Firenze, in Via Leonardo da Vinci, 38",
+      "city": "Firenze",
+      "phone": "319-5757463",
+      "services": [
+        "Frigo in camera",
+        "Piscina",
+        "Posto auto",
+        "Paga in struttura",
+        "Servizio in camera",
+        "TV in camera",
+        "Wi-Fi"
+      ]
+    },
+    "user": {
+      "username": "carolina",
+      "password": "gr",
+      "badges": "RECENSORE",
+      "nReview": 1,
+      "isLog": false
+    }
+  },
+  {
+    "rate": 1.0,
+    "ratings": [
+      5.0,
+      4.0,
+      3.0,
+      2.0
+    ],
+    "date": "2024-05-23 12:44",
+    "hotel": {
+      "id": 89,
+      "name": "Hotel Firenze 9",
+      "description": "Un bellissimo hotel a Firenze, in Via della libertà, 51",
+      "city": "Firenze",
+      "phone": "324-3562031",
+      "services": [
+        "Posto auto",
+        "Sauna",
+        "Servizio in camera",
+        "Piscina",
+        "Palestra",
+        "Frigo in camera",
+        "Wi-Fi"
+      ]
+    },
+    "user": {
+      "username": "carolina",
+      "password": "gr",
+      "badges": "RECENSORE",
+      "nReview": 0,
+      "isLog": false
+    }
+  },
+  {
     "rate": 5.0,
     "ratings": [
       1.0,
@@ -21,14 +87,39 @@
         "Posto auto",
         "Servizio in camera",
         "Paga in struttura"
-      ],
-      "rate": 5.0,
-      "ratings": {
-        "cleaning": 1.0,
-        "position": 2.0,
-        "services": 3.0,
-        "quality": 4.0
-      }
+      ]
+    },
+    "user": {
+      "username": "carolina",
+      "password": "gr",
+      "badges": "RECENSORE",
+      "nReview": 1,
+      "isLog": false
+    }
+  },
+  {
+    "rate": 5.0,
+    "ratings": [
+      1.0,
+      2.0,
+      3.0,
+      4.0
+    ],
+    "date": "2024-05-21 17:09",
+    "hotel": {
+      "id": 90,
+      "name": "Hotel Firenze 10",
+      "description": "Un ridente hotel a Firenze, in Via Roma, 55",
+      "city": "Firenze",
+      "phone": "395-2583226",
+      "services": [
+        "TV in camera",
+        "Sauna",
+        "Frigo in camera",
+        "Posto auto",
+        "Servizio in camera",
+        "Paga in struttura"
+      ]
     },
     "user": {
       "username": "carolina",
