@@ -1,6 +1,7 @@
 package utils;
 
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -15,18 +16,17 @@ public class User {
     private final String username;
     private final String password;
     private type badges;
-    private int nReview;
-    private boolean isLog;
+    private int nReview=0;
+    private transient boolean isLog=false;
     //il costruttore va chiamato solo durante la registrazione
     private User(String userName, String password){
             this.username = userName;
             this.badges = type.RECENSORE;
             this.password = password;
-            this.nReview = 0;
             this.isLog = false;
     }
 
-    private static User getUser(String username){
+    public static User getUser(String username){
         return registerUser.getOrDefault(username, null);
     }
 
@@ -41,7 +41,7 @@ public class User {
         return users;
     }
 
-    private String getUsername(){
+    public String getUsername(){
         return this.username;
     }
 
@@ -67,13 +67,13 @@ public class User {
         User user = getUser(username);
         String str = null;
         if(user==null){
-            str = "Utente non registrato";
+            str = "Utente non registrato\n";
         }
         else if(user.isLogged()){
-            str = "Utente loggato da un altro dispositivo";
+            str = "Utente loggato da un altro dispositivo\n";
         }
         else if(!(user.getPassword().equals(password))){
-             str = "Password errata o mancante";
+             str = "Password errata o mancante\n";
         }
         if(str!= null && out !=null){
             out.println(str);
@@ -81,8 +81,9 @@ public class User {
         }
         //se è chiamata da register user è sempre non nulla
         user.isLog = true;
+        user.setBadge();
         if(out != null){
-            out.println("Utente loggato con successo");
+            out.println("Login effettuato\n");
         }
 
         return user;
@@ -93,10 +94,11 @@ public class User {
             return "Utente non loggato";
         }
         this.isLog = false;
+        //leave multicast
         return "Logout eseguito. Grazie per aver utilizzato i nostri servizi.";
     }
 
-    public String insertReview(Hotel hotel,double GlobalScore,double[] SingleScores){
+    public String insertReview(Hotel hotel,double GlobalScore,double[] SingleScores) throws IOException {
         if (!(this.isLogged())) return "Utente non loggato";
         /*
          * inserire il punteggio
@@ -104,7 +106,7 @@ public class User {
          */
         Review rev = Review.addReview(hotel, this, GlobalScore, SingleScores);
         if(rev != null) {
-            nReview = nReview + 1;
+            this.nReview = this.nReview + 1;
             this.setBadge();
             //aggiorna il rank
             return "Recensione inserita con successo";
@@ -112,26 +114,31 @@ public class User {
         return "Recensione non inserita";
     }
 
-    private void setBadge(){
+    public void addBadge(){
+        this.nReview = this.nReview + 1;
+    }
+
+
+    public void setBadge(){
         if(this.isLogged()){
-            int n = Math.floorDiv(nReview,2);
-            switch(n){
-                case 0: this.badges = type.RECENSORE;
-                break;
-                case 1: this.badges = type.RECENSORE_ESPERTO;
-                break;
-                case 2:this.badges = type.CONTRIBUTORE;
-                break;
-                case 3:this.badges = type.CONTRIBUTORE_ESPERTO;
-                break;
-                default:this.badges = type.CONTRIBUTORE_SUPER;
-                break;
+            if(this.nReview<2){
+                this.badges = type.RECENSORE;}
+            else if (this.nReview<4) {
+                this.badges = type.RECENSORE_ESPERTO;
+            } else if (this.nReview<6) {
+                this.badges = type.CONTRIBUTORE;
+            } else if (this.nReview<8) {
+                this.badges = type.CONTRIBUTORE_ESPERTO;
+            } else{
+                this.badges = type.CONTRIBUTORE_SUPER;
             }
-        }
+            }
         //else { System.in.out("non sei loggato"); };
     }
 
     public type showMyBadges(){
+        System.out.println(this.nReview);
+        this.setBadge();
         return this.badges;
     }
 

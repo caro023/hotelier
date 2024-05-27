@@ -7,3 +7,4 @@ public enum type{
     CONTRIBUTORE_ESPERTO,
     CONTRIBUTORE_SUPER
 }
+

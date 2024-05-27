@@ -31,17 +31,20 @@ import java.util.concurrent.*;
     // Percorso del file di configurazione del client.
     public static final String configFile = "server.properties";
     // Nome host e porta del server.
-    public static String hostname; // localhost
-    public static int port; // 12000
-    public static int maxDelay;
-    public static int minDayReview;
-    public static final ExecutorService pool = Executors.newCachedThreadPool();
-    private static final String fileHotel = "Hotels.json";
-    private static final String fileUser = "User.json";
+   // public static String hostname; // localhost
+    private static int port; // 12000
+    private static int maxDelay;
+    private static int minDayReview;
+    private static final ExecutorService pool = Executors.newCachedThreadPool();
+     private static final String fileHotel = "Hotels.json";
+     private static final String fileUser = "User.json";
      private static final String fileReview = "Review.json";
-    private static final JsonHandler jsonHandler = new JsonHandler(fileHotel, fileUser, fileReview);
-
-    //multicasto
+    private static final String fileCity = "city.txt";
+    private static final JsonHandler jsonHandler = new JsonHandler(fileHotel, fileUser, fileReview, fileCity);
+    //multicast
+    private static int updateRank;
+    public static int multicastPort;
+    public static final String multicastIP= "224.0.0.0";
 
     public static void main(String[] args) {
     try {
@@ -53,14 +56,17 @@ import java.util.concurrent.*;
 
         ServerSocket serverSocket = new ServerSocket(port);
         Review.setDayReview(minDayReview);
-        Runtime.getRuntime().addShutdownHook(new TerminationHandler(maxDelay,pool, serverSocket, jsonHandler));
+        ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
+        updateBestHotel update = new updateBestHotel(multicastIP,multicastPort);
+        scheduler.scheduleAtFixedRate(update,10, updateRank, TimeUnit.MINUTES);
+        Runtime.getRuntime().addShutdownHook(new TerminationHandler(maxDelay,pool, serverSocket, jsonHandler,update));
         System.out.printf("[SERVER] In ascolto sulla porta: %d\n", port);
         while (true) {
             Socket socket;
             // Accetto le richieste provenienti dai client.
             try {socket = serverSocket.accept();}
             catch (SocketException e) {break;}
-            pool.execute(new ClientHandler(socket ));
+            pool.execute(new ClientHandler(socket));
             }
 
         }
@@ -68,8 +74,9 @@ import java.util.concurrent.*;
             System.err.printf("Errore: %s\n", e.getMessage());
             System.exit(1);
             }
-        
+
     }
+
 
     public static void readConfig() throws FileNotFoundException, IOException {
         InputStream input = MainServer.class.getResourceAsStream(configFile);
@@ -78,7 +85,8 @@ import java.util.concurrent.*;
         port = Integer.parseInt(prop.getProperty("port"));
         maxDelay = Integer.parseInt(prop.getProperty("maxDelay"));
         minDayReview = Integer.parseInt(prop.getProperty("minDayReview"));
-       // maxDelay = Integer.parseInt(prop.getProperty("maxDelay"));
+        updateRank = Integer.parseInt(prop.getProperty("updateRank"));
+        multicastPort = Integer.parseInt(prop.getProperty("multicastPort"));
         input.close();
     }
 }

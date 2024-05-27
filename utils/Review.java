@@ -1,5 +1,6 @@
 package utils;
 
+import java.io.IOException;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -63,6 +64,10 @@ public class Review {
                 for (int i = 0; i < 4; i++) {
                     ratings[i] = ratings[i] + rat[i];
                 }
+                User user = review.getUser();
+                if((User.getUser(user.getUsername()))!=null){
+                    user.addBadge();
+                }
             }
             if(totalReviews > 0) {
                 hotel.setRate(totalRate);
@@ -72,12 +77,12 @@ public class Review {
                     ratings[i] /= totalReviews;
                 }
                 hotel.setRatings(ratings);
-                calculateHotelScore(hotel,totalReviews, totalRate/totalReviews,ratings,totalDay);
+                calculateHotelScore(hotel, totalRate/totalReviews,ratings,totalDay);
             }
         }
     }
 
-    public static void calculateHotelScore(Hotel hotel, Integer totalVote, double rate, double[] ratings, long day) {
+    public static void calculateHotelScore(Hotel hotel, double rate, double[] ratings, long day) {
         // Pesi per ciascun parametro
         double weightRate = 0.5;
         double weightRatings = 0.4;
@@ -89,6 +94,7 @@ public class Review {
         for(double rating : ratings){
             totRatings += rating;
         }
+        double totalVote = hotel.getTotalVote();
         //normalizzo ratings da 0 a 100
         totRatings *= 5;
         // Calcolo finale del punteggio
@@ -102,21 +108,41 @@ public class Review {
     }
 
 
-    public static Review addReview(Hotel hotel, User user,double rate,double [] ratings){
+    public static Review addReview(Hotel hotel, User user,double rate,double [] ratings) throws IOException {
         LocalDateTime now = LocalDateTime.now();
         String date = stringTime(now);
         if (hotelReview.containsKey(hotel)) {
             CopyOnWriteArrayList<Review> reviews = hotelReview.get(hotel);
             for (Review review : reviews) {
-                if (review.getUser().equals(user) && ChronoUnit.DAYS.between(dateTime(review.getDate()), now) < MIN_DAYS_BETWEEN_REVIEWS) {
-                   // System.out.println("Si può inserire solo una recensione ogni " + MIN_DAYS_BETWEEN_REVIEWS + " days.");
-                    return null;
+                if(review.getDate()!=null){
+                    if (review.getUser().equals(user) && ChronoUnit.DAYS.between(dateTime(review.getDate()), now) < MIN_DAYS_BETWEEN_REVIEWS) {
+                        System.out.println("Si può inserire solo una recensione ogni " + MIN_DAYS_BETWEEN_REVIEWS + " days.");
+
+                        return null;
+                    }
                 }
             }
             Review review = new Review(hotel, rate, ratings, date, user);
             reviews.add(review);
+            hotel.updateVote();
             hotel.addRate(rate);
             hotel.addRatings(ratings);
+            LocalDateTime dateTime =hotel.getTimeReview();
+            if(dateTime!= null){
+            long day = ChronoUnit.DAYS.between(dateTime, now);
+            day = day*hotel.getTotalVote()/(hotel.getTotalVote()+1);
+            calculateHotelScore(hotel,rate,ratings,day);
+            LocalDateTime avgDate = now.minusDays(day);
+            hotel.setTimeReview(avgDate);
+            }else {
+                calculateHotelScore(hotel,rate,ratings,0);
+                hotel.setTimeReview(now);
+            }
+            Hotel.sortHotel(hotel.getCity());
+            Hotel best = Hotel.updateBest(hotel.getCity());
+            if(best!= null){
+                updateBestHotel.send(best.getCity(),best);
+            }
             return review;
         } else {
            // System.out.println("Hotel not supported: " + hotel);

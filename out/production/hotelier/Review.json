@@ -1,5 +1,85 @@
 [
   {
+    "rate": 2.0,
+    "ratings": [
+      4.0,
+      3.0,
+      5.0,
+      3.0
+    ],
+    "date": "2024-05-27 15:55",
+    "hotel": {
+      "id": 52,
+      "name": "Hotel Venezia 2",
+      "description": "Un grazioso hotel a Venezia, in Via Italia, 2",
+      "city": "Venezia",
+      "phone": "337-1365356",
+      "services": []
+    },
+    "user": {
+      "username": "carolina",
+      "password": "gr",
+      "badges": "RECENSORE_ESPERTO",
+      "nReview": 12
+    }
+  },
+  {
+    "rate": 5.0,
+    "ratings": [
+      5.0,
+      5.0,
+      5.0,
+      5.0
+    ],
+    "date": "2024-05-27 15:49",
+    "hotel": {
+      "id": 51,
+      "name": "Hotel Venezia 1",
+      "description": "Un bellissimo hotel a Venezia, in Via della gioia, 90",
+      "city": "Venezia",
+      "phone": "363-3785135",
+      "services": [
+        "Servizio in camera",
+        "Cancellazione gratuita",
+        "Piscina",
+        "TV in camera"
+      ]
+    },
+    "user": {
+      "username": "carolina",
+      "password": "gr",
+      "badges": "RECENSORE_ESPERTO",
+      "nReview": 14
+    }
+  },
+  {
+    "rate": 5.0,
+    "ratings": [
+      5.0,
+      5.0,
+      5.0,
+      5.0
+    ],
+    "date": "2024-05-27 16:04",
+    "hotel": {
+      "id": 168,
+      "name": "Hotel Potenza 8",
+      "description": "Un organizzato hotel a Potenza, in Via Leonardo da Vinci, 17",
+      "city": "Potenza",
+      "phone": "360-3861142",
+      "services": [
+        "Frigo in camera",
+        "Cancellazione gratuita"
+      ]
+    },
+    "user": {
+      "username": "carolina",
+      "password": "gr",
+      "badges": "RECENSORE",
+      "nReview": 9
+    }
+  },
+  {
     "rate": 1.0,
     "ratings": [
       3.0,
@@ -28,8 +108,40 @@
       "username": "carolina",
       "password": "gr",
       "badges": "RECENSORE",
-      "nReview": 1,
-      "isLog": false
+      "nReview": 24
+    }
+  },
+  {
+    "rate": 4.0,
+    "ratings": [
+      3.0,
+      4.0,
+      2.0,
+      5.0
+    ],
+    "date": "2024-05-27 15:51",
+    "hotel": {
+      "id": 54,
+      "name": "Hotel Venezia 4",
+      "description": "Un bellissimo hotel a Venezia, in Via Cavour, 98",
+      "city": "Venezia",
+      "phone": "396-7716044",
+      "services": [
+        "Posto auto",
+        "Cancellazione gratuita",
+        "Wi-Fi",
+        "Piscina",
+        "Frigo in camera",
+        "Palestra",
+        "Sauna",
+        "Servizio in camera"
+      ]
+    },
+    "user": {
+      "username": "carolina",
+      "password": "gr",
+      "badges": "RECENSORE_ESPERTO",
+      "nReview": 14
     }
   },
   {
@@ -61,8 +173,69 @@
       "username": "carolina",
       "password": "gr",
       "badges": "RECENSORE",
-      "nReview": 0,
-      "isLog": false
+      "nReview": 23
+    }
+  },
+  {
+    "rate": 5.0,
+    "ratings": [
+      3.0,
+      4.0,
+      2.0,
+      5.0
+    ],
+    "date": "2024-05-23 16:24",
+    "hotel": {
+      "id": 89,
+      "name": "Hotel Firenze 9",
+      "description": "Un bellissimo hotel a Firenze, in Via della libertà, 51",
+      "city": "Firenze",
+      "phone": "324-3562031",
+      "services": [
+        "Posto auto",
+        "Sauna",
+        "Servizio in camera",
+        "Piscina",
+        "Palestra",
+        "Frigo in camera",
+        "Wi-Fi"
+      ]
+    },
+    "user": {
+      "username": "car",
+      "password": "4",
+      "badges": "RECENSORE",
+      "nReview": 24
+    }
+  },
+  {
+    "rate": 1.0,
+    "ratings": [
+      2.0,
+      1.0,
+      3.0,
+      2.0
+    ],
+    "date": "2024-05-27 15:15",
+    "hotel": {
+      "id": 53,
+      "name": "Hotel Venezia 3",
+      "description": "Un bellissimo hotel a Venezia, in Via della libertà, 0",
+      "city": "Venezia",
+      "phone": "369-4681350",
+      "services": [
+        "Servizio in camera",
+        "Cancellazione gratuita",
+        "Frigo in camera",
+        "Wi-Fi",
+        "Palestra"
+      ]
+    },
+    "user": {
+      "username": "carolina",
+      "password": "gr",
+      "badges": "RECENSORE",
+      "nReview": 15
     }
   },
   {
@@ -93,8 +266,7 @@
       "username": "carolina",
       "password": "gr",
       "badges": "RECENSORE",
-      "nReview": 1,
-      "isLog": false
+      "nReview": 24
     }
   },
   {
@@ -125,8 +297,246 @@
       "username": "carolina",
       "password": "gr",
       "badges": "RECENSORE",
-      "nReview": 1,
-      "isLog": false
+      "nReview": 24
+    }
+  },
+  {
+    "rate": 5.0,
+    "ratings": [
+      3.0,
+      4.0,
+      2.0,
+      1.0
+    ],
+    "date": "2024-05-23 15:58",
+    "hotel": {
+      "id": 90,
+      "name": "Hotel Firenze 10",
+      "description": "Un ridente hotel a Firenze, in Via Roma, 55",
+      "city": "Firenze",
+      "phone": "395-2583226",
+      "services": [
+        "TV in camera",
+        "Sauna",
+        "Frigo in camera",
+        "Posto auto",
+        "Servizio in camera",
+        "Paga in struttura"
+      ]
+    },
+    "user": {
+      "username": "5",
+      "password": "e",
+      "badges": "RECENSORE",
+      "nReview": 24
+    }
+  },
+  {
+    "rate": 3.0,
+    "ratings": [
+      3.0,
+      4.0,
+      2.0,
+      4.0
+    ],
+    "date": "2024-05-23 16:15",
+    "hotel": {
+      "id": 90,
+      "name": "Hotel Firenze 10",
+      "description": "Un ridente hotel a Firenze, in Via Roma, 55",
+      "city": "Firenze",
+      "phone": "395-2583226",
+      "services": [
+        "TV in camera",
+        "Sauna",
+        "Frigo in camera",
+        "Posto auto",
+        "Servizio in camera",
+        "Paga in struttura"
+      ]
+    },
+    "user": {
+      "username": "gd",
+      "password": "ed",
+      "badges": "RECENSORE",
+      "nReview": 24
+    }
+  },
+  {
+    "rate": 2.0,
+    "ratings": [
+      3.0,
+      4.0,
+      2.0,
+      3.0
+    ],
+    "date": "2024-05-23 16:20",
+    "hotel": {
+      "id": 90,
+      "name": "Hotel Firenze 10",
+      "description": "Un ridente hotel a Firenze, in Via Roma, 55",
+      "city": "Firenze",
+      "phone": "395-2583226",
+      "services": [
+        "TV in camera",
+        "Sauna",
+        "Frigo in camera",
+        "Posto auto",
+        "Servizio in camera",
+        "Paga in struttura"
+      ]
+    },
+    "user": {
+      "username": "tr",
+      "password": "5",
+      "badges": "RECENSORE",
+      "nReview": 24
+    }
+  },
+  {
+    "rate": 2.0,
+    "ratings": [
+      3.0,
+      2.0,
+      4.0,
+      3.0
+    ],
+    "date": "2024-05-27 15:53",
+    "hotel": {
+      "id": 55,
+      "name": "Hotel Venezia 5",
+      "description": "Un bellissimo hotel a Venezia, in Via del tramonto, 15",
+      "city": "Venezia",
+      "phone": "386-5854078",
+      "services": [
+        "Wi-Fi",
+        "TV in camera",
+        "Palestra",
+        "Cancellazione gratuita",
+        "Servizio in camera"
+      ]
+    },
+    "user": {
+      "username": "carolina",
+      "password": "gr",
+      "badges": "RECENSORE",
+      "nReview": 12
+    }
+  },
+  {
+    "rate": 3.0,
+    "ratings": [
+      1.0,
+      3.0,
+      2.0,
+      4.0
+    ],
+    "date": "2024-05-27 14:56",
+    "hotel": {
+      "id": 58,
+      "name": "Hotel Venezia 8",
+      "description": "Un bellissimo hotel a Venezia, in Via della fantasia, 67",
+      "city": "Venezia",
+      "phone": "317-9168516",
+      "services": [
+        "Palestra"
+      ]
+    },
+    "user": {
+      "username": "carolina",
+      "password": "gr",
+      "badges": "RECENSORE",
+      "nReview": 18
+    }
+  },
+  {
+    "rate": 2.0,
+    "ratings": [
+      3.0,
+      2.0,
+      4.0,
+      3.0
+    ],
+    "date": "2024-05-27 15:57",
+    "hotel": {
+      "id": 163,
+      "name": "Hotel Potenza 3",
+      "description": "Un grazioso hotel a Potenza, in Via Cavour, 41",
+      "city": "Potenza",
+      "phone": "339-2785716",
+      "services": [
+        "Posto auto",
+        "Servizio in camera"
+      ]
+    },
+    "user": {
+      "username": "carolina",
+      "password": "gr",
+      "badges": "RECENSORE_ESPERTO",
+      "nReview": 12
+    }
+  },
+  {
+    "rate": 5.0,
+    "ratings": [
+      4.0,
+      3.0,
+      4.0,
+      3.0
+    ],
+    "date": "2024-05-27 15:58",
+    "hotel": {
+      "id": 162,
+      "name": "Hotel Potenza 2",
+      "description": "Un organizzato hotel a Potenza, in Via della fantasia, 28",
+      "city": "Potenza",
+      "phone": "321-8195983",
+      "services": [
+        "Frigo in camera",
+        "Servizio in camera",
+        "Piscina",
+        "Cancellazione gratuita",
+        "Wi-Fi",
+        "Sauna"
+      ]
+    },
+    "user": {
+      "username": "carolina",
+      "password": "gr",
+      "badges": "RECENSORE",
+      "nReview": 9
+    }
+  },
+  {
+    "rate": 2.0,
+    "ratings": [
+      1.0,
+      2.0,
+      3.0,
+      4.0
+    ],
+    "date": "2024-05-27 15:13",
+    "hotel": {
+      "id": 60,
+      "name": "Hotel Venezia 10",
+      "description": "Un grazioso hotel a Venezia, in Via della gioia, 66",
+      "city": "Venezia",
+      "phone": "368-5394265",
+      "services": [
+        "Piscina",
+        "Frigo in camera",
+        "Wi-Fi",
+        "Palestra",
+        "Paga in struttura",
+        "Sauna",
+        "Cancellazione gratuita"
+      ]
+    },
+    "user": {
+      "username": "carolina",
+      "password": "gr",
+      "badges": "RECENSORE",
+      "nReview": 16
     }
   }
 ]

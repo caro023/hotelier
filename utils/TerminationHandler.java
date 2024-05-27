@@ -11,12 +11,14 @@ public class TerminationHandler extends Thread {
     private final ExecutorService pool;
     private final ServerSocket serverSocket;
     private final JsonHandler JsonHandler;
-    public TerminationHandler(int maxDelay, ExecutorService pool, ServerSocket serverSocket, JsonHandler JsonHandler)
+    private final updateBestHotel update;
+    public TerminationHandler(int maxDelay, ExecutorService pool, ServerSocket serverSocket, JsonHandler JsonHandler, updateBestHotel update)
         {
             this.maxDelay = maxDelay;
             this.pool = pool;
             this.serverSocket = serverSocket;
             this.JsonHandler = JsonHandler;
+            this.update = update;
         }
         public void run() {
             // Avvio la procedura di terminazione del server.
@@ -27,6 +29,7 @@ public class TerminationHandler extends Thread {
                      System.err.printf("[SERVER] Errore: %s\n", e.getMessage());
                 }
                 // Faccio terminare il pool di thread.
+                update.stop();
                 pool.shutdown();
                 try {
                     if (!pool.awaitTermination(maxDelay, TimeUnit.MILLISECONDS)) {

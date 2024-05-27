@@ -19,9 +19,10 @@ public class Hotel {
     private transient double rate = 0;
     private transient Map<String, Double> ratings = new HashMap<>();
     private static final transient ConcurrentHashMap< String, CopyOnWriteArrayList<Hotel>> hotels = new ConcurrentHashMap<>();
+    private static final transient HashMap<String,Hotel> bestHotel = new HashMap<>();
     private transient double totalScore;
     private transient int totalVote;
-    private transient LocalDateTime timeReview;
+    private transient LocalDateTime timeReview = null;
 
     public int getId() {
         return id;
@@ -110,7 +111,7 @@ public class Hotel {
 
     public void addRate(double rate) {
         //controlla che quanod viene chiamato totalVote è diverso da 0
-        this.rate = (((this.rate*this.totalVote-1)+rate)/this.totalVote) ;
+        this.rate = (((this.rate*(this.totalVote-1))+rate)/this.totalVote) ;
     }
 
         // Getter e setter per le valutazioni
@@ -126,7 +127,6 @@ public class Hotel {
     }
 
     public void addRatings(double[] singleScores) {
-        this.updateVote();
         this.ratings.put("cleaning", updateAverage(this.ratings.get("cleaning"), singleScores[0]));
         this.ratings.put("service", updateAverage(this.ratings.get("position"), singleScores[1]));
         this.ratings.put("position", updateAverage(this.ratings.get("service"), singleScores[2]));
@@ -134,7 +134,7 @@ public class Hotel {
     }
 
     private double updateAverage(double currentAverage, double newScore) {
-        return (double) Math.round(((currentAverage * (this.totalVote - 1) + newScore) / totalVote) * 100) /100;
+        return (double) Math.round((((currentAverage*(this.totalVote-1)) + newScore) / this.totalVote) * 100) /100;
     }
 
     public static List<Hotel> getAllHotels() {
@@ -189,8 +189,7 @@ public class Hotel {
         return allCity;
     }
 
-    public static void initializeHotels() {
-        String listCity = "city.txt";
+    public static void initializeHotels(String listCity) {
         try (BufferedReader br = new BufferedReader(new FileReader(listCity))) {
             String city;
             while ((city = br.readLine()) != null) {
@@ -202,10 +201,39 @@ public class Hotel {
     }
 
     public static void sortHotel(String city){
+        city = city.toLowerCase();
         CopyOnWriteArrayList<Hotel> hotelsInCity = Hotel.hotels.getOrDefault(city, null);
         if (hotelsInCity != null) {
             hotelsInCity.sort(Comparator.comparingDouble(Hotel::getTotalScore).reversed());
         }
+    }
+
+    public static void initializeBest() {
+        for (Map.Entry<String, CopyOnWriteArrayList<Hotel>> entry : hotels.entrySet()) {
+            String city = entry.getKey();
+            CopyOnWriteArrayList<Hotel> cityHotels = entry.getValue();
+            if (!cityHotels.isEmpty()) {
+                bestHotel.put(city, cityHotels.getFirst());
+            }
+            else{
+                bestHotel.put(city,null);
+            }
+        }
+    }
+
+    public static Hotel updateBest(String city) {
+        city = city.trim().toLowerCase();
+        if (!hotels.containsKey(city)) {
+            System.out.println("City not supported: " + city);
+            return null;
+        }
+        Hotel newHotel = Hotel.hotels.get(city).getFirst();
+        Hotel currentBestHotel = bestHotel.get(city);
+        if (currentBestHotel == null || !currentBestHotel.equals(newHotel)) {
+            bestHotel.put(city, newHotel);
+            return newHotel;
+        }
+        return null;
     }
 
     /**

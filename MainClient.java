@@ -19,21 +19,21 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.util.Objects;
 import java.util.Properties;
 import java.util.Scanner;
 
-import utils.ClientHandler;
+import utils.ListenMulticast;
 import utils.type;
 
 public class MainClient{
     // Percorso del file di configurazione del client.
     public static final String configFile = "client.properties";
     // Variabile globale che rappresenta lo stato corrente.
-    public static type Type = type.RECENSORE;
     // Nome host e porta del server.
     public static String hostname; // localhost
-    public static int port; // 12000
+    public static int port;// 12000
+    private static int multicastPort;
+    private static final String multicastIP = "224.0.0.0";
 
     // Socket e relativi stream di input/output.
     private static final Scanner scanner = new Scanner(System.in);
@@ -45,6 +45,7 @@ public class MainClient{
         Socket socket = new Socket(hostname, port);
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+        ListenMulticast listener = null;
 
         System.out.println(in.readLine().replace("|", "\n"));
 
@@ -58,13 +59,30 @@ public class MainClient{
                 String line = in.readLine();
                 //comando di uscita
                 if(line.equals("exit")) {
+                    if(listener != null){
+                        listener.leaveGroup();
+                        listener.interrupt();
+                        listener.join();
+                        listener = null;
+                    }
                     System.out.println(in.readLine().replace("|", "\n"));
                     break;
                 }
                  line = line.replace("|", "\n");
-                 System.out.println(line);
-                 System.out.flush();
+                if(line.equals("Login effettuato")||line.equals("Registrazione effettuata")){
+                    if(listener != null){
+                        listener.interrupt();
+                        listener.join();
+                    }
+                    listener = new ListenMulticast(multicastIP,multicastPort);
+                    listener.start();
+                }
+            System.out.println(line);
+                System.out.flush();
             }
+        in.close();
+        out.close();
+        socket.close();
         }
         catch (Exception e) {
             System.err.printf("Errore: %s\n", e.getMessage());
@@ -79,6 +97,7 @@ public class MainClient{
         prop.load(input);
         port = Integer.parseInt(prop.getProperty("port"));
        // maxDelay = Integer.parseInt(prop.getProperty("maxDelay"));
+        multicastPort = Integer.parseInt(prop.getProperty("multicastPort"));
         input.close();
     }
 }

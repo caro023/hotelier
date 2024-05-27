@@ -1,11 +1,11 @@
 package utils;
 import java.io.*;
 import java.net.Socket;
-import java.util.Arrays;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ClientHandler implements Runnable {
     private final Socket socket;
+
     private User userInstance;
     private BufferedReader in;
     private PrintWriter out;
@@ -30,6 +30,7 @@ public class ClientHandler implements Runnable {
             if(userInstance != null && userInstance.isLogged()){
                 userInstance.logout();
             }
+            output("Si è verificato un errore");
             System.err.printf("[WORKER] Errore: %s\n", e.getMessage());
         }
     }
@@ -40,13 +41,13 @@ public class ClientHandler implements Runnable {
             str = str + "Benvenuto, questi sono i possibili comandi:\n";
         }
         else{
-             str = str + "Comando: "+cmd+"non supportato\n questi sono i possibili comandi:\n";
+             str = str + "Comando: \""+cmd+"\" non supportato\nQuesti sono i possibili comandi:\n";
         }
         str = str+ "Register <username> <password>\n"
                 +"Login <username> <password>\n"
                 +"Logout\n"
                 +"SearchHotel \"Nome Hotel\" \"Nome Città\n" +"SearchAllHotels \"Nome Città\"\n"
-                +"InsertReview\n"+"ShowMyBadges\n"+"Exit\n";
+                +"InsertReview\n"+"ShowMyBadges\n"+"Exit";
         output(str);
     }
 
@@ -62,16 +63,16 @@ public class ClientHandler implements Runnable {
                         return;
                     }
                     if(!(userInstance == null)) {
-                        output("Comando non disponibile, utente già loggato\n");
+                        output("Comando non disponibile, utente già loggato");
                         return;
                     }
                     else {
                         User user = User.register(splitLine[1], splitLine[2]);
                         if (user == null) {
-                            output("Registrazione non riuscita\n");
+                            output("Registrazione non riuscita");
                             return;
                         } else userInstance = user;
-                        output("Benvenuto " + splitLine[1]+"\n");
+                        output("Registrazione effettuata");
                     }
                     break;
                 case "login":
@@ -81,7 +82,7 @@ public class ClientHandler implements Runnable {
                         return;
                     }
                     else if((userInstance!=null)) {
-                        output("Comando non disponibile, utente già loggato\n");
+                        output("Comando non disponibile, utente già loggato");
                         return;
                     }
                     else{
@@ -97,7 +98,7 @@ public class ClientHandler implements Runnable {
                         return;
                     }
                     if(userInstance==null) {
-                        output("Utente non loggato\n");
+                        output("Utente non loggato");
                         return;
                     }
                     else {
@@ -111,7 +112,7 @@ public class ClientHandler implements Runnable {
                         return;
                     }
                     Hotel hotel = Hotel.searchHotel(args[1],args[3]);
-                    if(hotel==null) output("Hotel non trovato\n");
+                    if(hotel==null) output("Hotel non trovato");
                     else output(hotel.toString());
                     break;
                 case "searchallhotels":
@@ -120,7 +121,10 @@ public class ClientHandler implements Runnable {
                         return;
                     }
                     CopyOnWriteArrayList<Hotel> hotels = Hotel.searchAllHotels(args[1]);
-                    if(hotels==null) output("Città non trovata\n");
+                    if(hotels==null) {
+                        output("Città non trovata");
+                        return;
+                    }
                     else{
                     String allHotel = "";
                     for (Hotel h : hotels) {
@@ -130,55 +134,68 @@ public class ClientHandler implements Runnable {
                     }
                     break;
                 case "insertreview":
-                    //inrew "hotel" "città" 1 2 3 4 5
-                    if(userInstance==null){output("Utente non loggato\n");}
+                    if(args.length!=5){
+                        command(line);
+                        return;
+                    }
+                    if(userInstance==null){output("Utente non loggato");}
                     hotel = Hotel.searchHotel(args[1].trim(),args[3].trim());
 
                     if(hotel==null) {
-                        output("Hotel non trovato\n");
-                        break;
+                        output("Hotel non trovato");
+                        return;
                     }
                     //controllo se input giusto
                     double[] SingleScores = new double[4];
                     String[] review = args[4].trim().split(" ");
-                    if(review.length!=5) command(line);
+                    if(review.length!=5){
+                        command(line);
+                        return;
+                    }
                     //controllo se non inserisce numeri
                     for (int i = 0; i < 4; i++) {
                          double rating = Double.parseDouble(review[i]);
                          if(rating<0|| rating>5) {
-                             output("Si accettano solo recensioni tra 1 e 5\n");
-                             break;
+                             output("Si accettano solo recensioni tra 1 e 5");
+                             return;
                          }
                          SingleScores[i] = Double.parseDouble(review[i]);
                     }
-                    output(userInstance.insertReview(hotel, Double.parseDouble(review[4]), SingleScores));
+                    String c = userInstance.insertReview(hotel, Double.parseDouble(review[4]), SingleScores);
+                    output(c);
                     break;
                 case "showmybadges":
                     if(splitLine.length!=1) {
                         command(line);
                         return;
                     }
-                    if(userInstance==null){output("utente non loggato\n");}
-                    else {out.println(userInstance.showMyBadges());}
+                    if(userInstance==null){
+                        output("Utente non loggato");
+                        return;
+                    }
+                    else {output(userInstance.showMyBadges().toString());}
                     break;
                 case "exit":
                     if(!(userInstance==null)) userInstance.logout();
                     out.println("exit");
                     status = Status.INATTIVO;
-                    output("Grazie per aver utilizzato i nostri servizi\n");
+                    output("Grazie per aver utilizzato i nostri servizi");
                     break;
                 default://scrivi qualcosa
                     command(line);
                     break;
             }
         }
+
     private void output(String command){
+        if (command == null || command.trim().isEmpty()) {
+            return;
+        }
         String  msg;
-        msg = ("'" + command  );
-      //  System.out.println("[WORKER: "+this.clientName()+"] " + command + " - " + ret.toString());
         out.println(command.replace("\n", "|"));
         out.flush();
     }
     }
+
 
 

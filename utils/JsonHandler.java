@@ -10,16 +10,18 @@ public class JsonHandler {
     private static String fileHotel;
     private static String fileUser;
     private static String fileReview;
+    private static String fileCity;
 
-    public JsonHandler(String fileHotel, String fileUser, String fileReview){
+    public JsonHandler(String fileHotel, String fileUser, String fileReview, String fileCity){
         //mettere direttamente qui il nome dei file
         JsonHandler.fileHotel = fileHotel;
         JsonHandler.fileUser = fileUser;
         //se riesci quando serializzi memorizza solo il nome dell'hotel e l'username del recensore e tramite le funzioni get user,gethotel lo inizializzi
         JsonHandler.fileReview = fileReview;
-        Hotel.initializeHotels();
-        hotelReader();
+        JsonHandler.fileCity = fileCity;
         userReader();
+        Hotel.initializeHotels(fileCity);
+        hotelReader();
     }
 
     //mettere hotel e user reader nella stessa funzione
@@ -27,7 +29,6 @@ public class JsonHandler {
             try{
                 FileReader reader = new FileReader(fileHotel);
                 Gson gson = new Gson();
-              // Hotel hotels = gson.fromJson();
                 for(Hotel hotel : gson.fromJson(reader, Hotel[].class)){
                     hotel.setHotel();
                 }
@@ -37,6 +38,7 @@ public class JsonHandler {
                 for(String city: Hotel.getAllCity()){
                     Hotel.sortHotel(city);
                 }
+                Hotel.initializeBest();
             }catch(Exception e){
                 System.out.println(e.getMessage());
                 e.printStackTrace();
@@ -47,7 +49,6 @@ public class JsonHandler {
         try{
             FileReader reader = new FileReader(fileUser);
             Gson gson = new Gson();
-            // Hotel hotels = gson.fromJson();
             for(User user : gson.fromJson(reader, User[].class)){
                 user.setUser();
             }
@@ -61,7 +62,6 @@ public class JsonHandler {
         try{
             FileReader reader = new FileReader(fileReview);
             Gson gson = new Gson();
-            // Hotel hotels = gson.fromJson();
             for(Review review : gson.fromJson(reader, Review[].class)){
                 review.setReview();
             }
