@@ -2283,6 +2283,20 @@
     ]
   },
   {
+    "id": 53,
+    "name": "Hotel Venezia 3",
+    "description": "Un bellissimo hotel a Venezia, in Via della libertà, 0",
+    "city": "Venezia",
+    "phone": "369-4681350",
+    "services": [
+      "Servizio in camera",
+      "Cancellazione gratuita",
+      "Frigo in camera",
+      "Wi-Fi",
+      "Palestra"
+    ]
+  },
+  {
     "id": 51,
     "name": "Hotel Venezia 1",
     "description": "Un bellissimo hotel a Venezia, in Via della gioia, 90",
@@ -2358,20 +2372,6 @@
       "Paga in struttura",
       "Sauna",
       "Cancellazione gratuita"
-    ]
-  },
-  {
-    "id": 53,
-    "name": "Hotel Venezia 3",
-    "description": "Un bellissimo hotel a Venezia, in Via della libertà, 0",
-    "city": "Venezia",
-    "phone": "369-4681350",
-    "services": [
-      "Servizio in camera",
-      "Cancellazione gratuita",
-      "Frigo in camera",
-      "Wi-Fi",
-      "Palestra"
     ]
   },
   {
@@ -2551,21 +2551,6 @@
     ]
   },
   {
-    "id": 90,
-    "name": "Hotel Firenze 10",
-    "description": "Un ridente hotel a Firenze, in Via Roma, 55",
-    "city": "Firenze",
-    "phone": "395-2583226",
-    "services": [
-      "TV in camera",
-      "Sauna",
-      "Frigo in camera",
-      "Posto auto",
-      "Servizio in camera",
-      "Paga in struttura"
-    ]
-  },
-  {
     "id": 89,
     "name": "Hotel Firenze 9",
     "description": "Un bellissimo hotel a Firenze, in Via della libertà, 51",
@@ -2579,6 +2564,21 @@
       "Palestra",
       "Frigo in camera",
       "Wi-Fi"
+    ]
+  },
+  {
+    "id": 90,
+    "name": "Hotel Firenze 10",
+    "description": "Un ridente hotel a Firenze, in Via Roma, 55",
+    "city": "Firenze",
+    "phone": "395-2583226",
+    "services": [
+      "TV in camera",
+      "Sauna",
+      "Frigo in camera",
+      "Posto auto",
+      "Servizio in camera",
+      "Paga in struttura"
     ]
   },
   {

@@ -77,8 +77,8 @@ public class MainClient{
                     listener = new ListenMulticast(multicastIP,multicastPort);
                     listener.start();
                 }
-            System.out.println(line);
-                System.out.flush();
+              System.out.println(line);
+               // System.out.flush();
             }
         in.close();
         out.close();

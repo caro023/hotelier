@@ -27,6 +27,7 @@ public class Hotel {
     public int getId() {
         return id;
     }
+
     public void setTotalScore(double score) {
         this.totalScore = score;
     }

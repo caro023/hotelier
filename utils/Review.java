@@ -14,17 +14,23 @@ public class Review {
     private double rate;
     private double[] ratings;
     private final String date;
-    private final Hotel hotel;
-    private final User user;
+    private transient Hotel hotel;
+    private transient User user;
+    private final String userName;
+    private final String nameHotel;
+    private final String city;
     private static final ConcurrentHashMap<Hotel, CopyOnWriteArrayList<Review>> hotelReview = new ConcurrentHashMap<Hotel, CopyOnWriteArrayList<Review>>();
     private static Integer MIN_DAYS_BETWEEN_REVIEWS = null;
 
-    public Review(Hotel hotel, double rate, double[] ratings, String date, User user) {
-        this.hotel = hotel;
+    public Review(double rate, double[] ratings, String date, String userName, String nameHotel, String city) {
         this.rate = rate;
         this.ratings = ratings;
         this.date = date;
-        this.user = user;
+        this.userName = userName;
+        this.user = User.getUser(userName);
+        this.nameHotel = nameHotel;
+        this.city = city;
+        this.hotel = Hotel.searchHotel(this.nameHotel,this.city);
     }
 
     public static void setDayReview(Integer min){
@@ -32,12 +38,15 @@ public class Review {
     }
 
     public void setReview(){
-        Hotel hotel = this.getHotel();
-        if (hotelReview.containsKey(hotel)) {
-            CopyOnWriteArrayList<Review> reviews = hotelReview.get(hotel);
-            reviews.add(this);
-        } else {
-            System.out.println("Hotel not supported: " + hotel);
+        Hotel hotel = Hotel.searchHotel(this.nameHotel.toLowerCase(),this.city.toLowerCase());
+        if(hotel != null) {
+            this.setHotel(hotel);
+            if (hotelReview.containsKey(hotel)) {
+                CopyOnWriteArrayList<Review> reviews = hotelReview.get(hotel);
+                reviews.add(this);
+            } else {
+                System.out.println("Hotel not supported: " + hotel);
+            }
         }
     }
 
@@ -64,8 +73,10 @@ public class Review {
                 for (int i = 0; i < 4; i++) {
                     ratings[i] = ratings[i] + rat[i];
                 }
+                String UserName = review.getusername();
+                review.setUser(User.getUser(UserName));
                 User user = review.getUser();
-                if((User.getUser(user.getUsername()))!=null){
+                if(user!=null){
                     user.addBadge();
                 }
             }
@@ -80,6 +91,18 @@ public class Review {
                 calculateHotelScore(hotel, totalRate/totalReviews,ratings,totalDay);
             }
         }
+    }
+
+    private void setUser(User user) {
+        this.user=user;
+    }
+
+    private void setHotel(Hotel hotel){
+        this.hotel = hotel;
+    }
+
+    private String getusername() {
+        return this.userName;
     }
 
     public static void calculateHotelScore(Hotel hotel, double rate, double[] ratings, long day) {
@@ -122,7 +145,8 @@ public class Review {
                     }
                 }
             }
-            Review review = new Review(hotel, rate, ratings, date, user);
+            String userName= user.getUsername();
+            Review review = new Review(rate, ratings, date, userName, hotel.getName(),hotel.getCity());
             reviews.add(review);
             hotel.updateVote();
             hotel.addRate(rate);
