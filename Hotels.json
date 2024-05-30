@@ -671,6 +671,24 @@
     ]
   },
   {
+    "id": 43,
+    "name": "Hotel Trento 3",
+    "description": "Un ridente hotel a Trento, in Via Leonardo da Vinci, 42",
+    "city": "Trento",
+    "phone": "329-5075343",
+    "services": [
+      "Wi-Fi",
+      "Sauna",
+      "Piscina",
+      "Palestra",
+      "Paga in struttura",
+      "Posto auto",
+      "Servizio in camera",
+      "TV in camera",
+      "Cancellazione gratuita"
+    ]
+  },
+  {
     "id": 41,
     "name": "Hotel Trento 1",
     "description": "Un bellissimo hotel a Trento, in Via Cavour, 23",
@@ -693,24 +711,6 @@
     "city": "Trento",
     "phone": "321-9383291",
     "services": [
-      "Cancellazione gratuita"
-    ]
-  },
-  {
-    "id": 43,
-    "name": "Hotel Trento 3",
-    "description": "Un ridente hotel a Trento, in Via Leonardo da Vinci, 42",
-    "city": "Trento",
-    "phone": "329-5075343",
-    "services": [
-      "Wi-Fi",
-      "Sauna",
-      "Piscina",
-      "Palestra",
-      "Paga in struttura",
-      "Posto auto",
-      "Servizio in camera",
-      "TV in camera",
       "Cancellazione gratuita"
     ]
   },
@@ -2283,6 +2283,23 @@
     ]
   },
   {
+    "id": 54,
+    "name": "Hotel Venezia 4",
+    "description": "Un bellissimo hotel a Venezia, in Via Cavour, 98",
+    "city": "Venezia",
+    "phone": "396-7716044",
+    "services": [
+      "Posto auto",
+      "Cancellazione gratuita",
+      "Wi-Fi",
+      "Piscina",
+      "Frigo in camera",
+      "Palestra",
+      "Sauna",
+      "Servizio in camera"
+    ]
+  },
+  {
     "id": 53,
     "name": "Hotel Venezia 3",
     "description": "Un bellissimo hotel a Venezia, in Via della libertà, 0",
@@ -2307,23 +2324,6 @@
       "Cancellazione gratuita",
       "Piscina",
       "TV in camera"
-    ]
-  },
-  {
-    "id": 54,
-    "name": "Hotel Venezia 4",
-    "description": "Un bellissimo hotel a Venezia, in Via Cavour, 98",
-    "city": "Venezia",
-    "phone": "396-7716044",
-    "services": [
-      "Posto auto",
-      "Cancellazione gratuita",
-      "Wi-Fi",
-      "Piscina",
-      "Frigo in camera",
-      "Palestra",
-      "Sauna",
-      "Servizio in camera"
     ]
   },
   {
@@ -2551,6 +2551,19 @@
     ]
   },
   {
+    "id": 83,
+    "name": "Hotel Firenze 3",
+    "description": "Un bellissimo hotel a Firenze, in Via Roma, 45",
+    "city": "Firenze",
+    "phone": "313-7184050",
+    "services": [
+      "Servizio in camera",
+      "Frigo in camera",
+      "TV in camera",
+      "Cancellazione gratuita"
+    ]
+  },
+  {
     "id": 89,
     "name": "Hotel Firenze 9",
     "description": "Un bellissimo hotel a Firenze, in Via della libertà, 51",
@@ -2616,19 +2629,6 @@
     "city": "Firenze",
     "phone": "339-6787075",
     "services": []
-  },
-  {
-    "id": 83,
-    "name": "Hotel Firenze 3",
-    "description": "Un bellissimo hotel a Firenze, in Via Roma, 45",
-    "city": "Firenze",
-    "phone": "313-7184050",
-    "services": [
-      "Servizio in camera",
-      "Frigo in camera",
-      "TV in camera",
-      "Cancellazione gratuita"
-    ]
   },
   {
     "id": 84,

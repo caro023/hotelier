@@ -3,13 +3,13 @@
     "username": "carolina",
     "password": "gr",
     "badges": "RECENSORE_ESPERTO",
-    "nReview": 2
+    "nReview": 3
   },
   {
     "username": "car",
     "password": "4",
     "badges": "RECENSORE",
-    "nReview": 0
+    "nReview": 1
   },
   {
     "username": "5",
@@ -22,6 +22,12 @@
     "password": "je",
     "badges": "RECENSORE",
     "nReview": 0
+  },
+  {
+    "username": "beppa",
+    "password": "bea",
+    "badges": "RECENSORE",
+    "nReview": 1
   },
   {
     "username": "gd",

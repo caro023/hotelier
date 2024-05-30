@@ -18,8 +18,8 @@ public class Hotel {
     private String[] services;
     private transient double rate = 0;
     private transient Map<String, Double> ratings = new HashMap<>();
-    private static final transient ConcurrentHashMap< String, CopyOnWriteArrayList<Hotel>> hotels = new ConcurrentHashMap<>();
-    private static final transient HashMap<String,Hotel> bestHotel = new HashMap<>();
+    private static final ConcurrentHashMap< String, CopyOnWriteArrayList<Hotel>> hotels = new ConcurrentHashMap<>();
+    private static final HashMap<String,Hotel> bestHotel = new HashMap<>();
     private transient double totalScore;
     private transient int totalVote;
     private transient LocalDateTime timeReview = null;

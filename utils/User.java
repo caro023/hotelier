@@ -67,13 +67,13 @@ public class User {
         User user = getUser(username);
         String str = null;
         if(user==null){
-            str = "Utente non registrato\n";
+            str = "Utente non registrato";
         }
         else if(user.isLogged()){
-            str = "Utente loggato da un altro dispositivo\n";
+            str = "Utente loggato da un altro dispositivo";
         }
         else if(!(user.getPassword().equals(password))){
-             str = "Password errata o mancante\n";
+             str = "Password errata o mancante";
         }
         if(str!= null && out !=null){
             out.println(str);
@@ -83,7 +83,7 @@ public class User {
         user.isLog = true;
         user.setBadge();
         if(out != null){
-            out.println("Login effettuato\n");
+            out.println("Login effettuato");
         }
 
         return user;
@@ -100,10 +100,6 @@ public class User {
 
     public String insertReview(Hotel hotel,double GlobalScore,double[] SingleScores) throws IOException {
         if (!(this.isLogged())) return "Utente non loggato";
-        /*
-         * inserire il punteggio
-         * aggiornare il rank
-         */
         Review rev = Review.addReview(hotel, this, GlobalScore, SingleScores);
         if(rev != null) {
             this.nReview = this.nReview + 1;
@@ -137,7 +133,6 @@ public class User {
     }
 
     public type showMyBadges(){
-        System.out.println(this.nReview);
         this.setBadge();
         return this.badges;
     }

@@ -54,7 +54,6 @@ public class MainClient{
                 String cmd = scanner.nextLine();
                 out.println(cmd);
 
-
                 //risposta del server
                 String line = in.readLine();
                 //comando di uscita
@@ -68,7 +67,8 @@ public class MainClient{
                     System.out.println(in.readLine().replace("|", "\n"));
                     break;
                 }
-                 line = line.replace("|", "\n");
+
+                line = line.replace("|", "\n");
                 if(line.equals("Login effettuato")||line.equals("Registrazione effettuata")){
                     if(listener != null){
                         listener.interrupt();
@@ -78,7 +78,7 @@ public class MainClient{
                     listener.start();
                 }
               System.out.println(line);
-               // System.out.flush();
+                System.out.flush();
             }
         in.close();
         out.close();

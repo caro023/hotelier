@@ -31,6 +31,9 @@ public class ClientHandler implements Runnable {
                 userInstance.logout();
             }
             output("Si è verificato un errore");
+            if(e instanceof NumberFormatException){
+                output("Si accettano solo recensioni numeriche");
+            }
             System.err.printf("[WORKER] Errore: %s\n", e.getMessage());
         }
     }
@@ -112,7 +115,21 @@ public class ClientHandler implements Runnable {
                         return;
                     }
                     Hotel hotel = Hotel.searchHotel(args[1],args[3]);
-                    if(hotel==null) output("Hotel non trovato");
+                    if(hotel==null) {
+                        //output("Hotel non trovato");
+                        CopyOnWriteArrayList<Hotel> hotels = Hotel.searchAllHotels(args[3]);
+                        if(hotels==null) {
+                            output("Città non trovata");
+                            return;
+                        }
+                        else{
+                            String allHotel = "";
+                            for (Hotel h : hotels) {
+                                allHotel += h.getName()+"\n";
+                            }
+                            output("Hotel non trovato.\nAltri hotels presenti a "+args[3]+":\n"+allHotel);
+                        }
+                    }
                     else output(hotel.toString());
                     break;
                 case "searchallhotels":
@@ -138,7 +155,8 @@ public class ClientHandler implements Runnable {
                         command(line);
                         return;
                     }
-                    if(userInstance==null){output("Utente non loggato");}
+                    if(userInstance==null){output("Utente non loggato");
+                    return;}
                     hotel = Hotel.searchHotel(args[1].trim(),args[3].trim());
 
                     if(hotel==null) {
@@ -149,14 +167,14 @@ public class ClientHandler implements Runnable {
                     double[] SingleScores = new double[4];
                     String[] review = args[4].trim().split(" ");
                     if(review.length!=5){
-                        command(line);
+                        output("Devono essere inseriti i punteggi per Pulizia, Servizi,....Totale");
                         return;
                     }
                     //controllo se non inserisce numeri
                     for (int i = 0; i < 4; i++) {
                          double rating = Double.parseDouble(review[i]);
                          if(rating<0|| rating>5) {
-                             output("Si accettano solo recensioni tra 1 e 5");
+                             output("Si accettano solo recensioni numeriche tra 1 e 5");
                              return;
                          }
                          SingleScores[i] = Double.parseDouble(review[i]);
@@ -173,7 +191,7 @@ public class ClientHandler implements Runnable {
                         output("Utente non loggato");
                         return;
                     }
-                    else {output(userInstance.showMyBadges().toString());}
+                    else {out.println(userInstance.showMyBadges());}
                     break;
                 case "exit":
                     if(!(userInstance==null)) userInstance.logout();
@@ -191,7 +209,6 @@ public class ClientHandler implements Runnable {
         if (command == null || command.trim().isEmpty()) {
             return;
         }
-        String  msg;
         out.println(command.replace("\n", "|"));
         out.flush();
     }
