@@ -140,7 +140,6 @@ public class Review {
                 if(review.getDate()!=null){
                     if (review.getUser().equals(user) && ChronoUnit.DAYS.between(dateTime(review.getDate()), now) < MIN_DAYS_BETWEEN_REVIEWS) {
                         System.out.println("Si può inserire solo una recensione ogni " + MIN_DAYS_BETWEEN_REVIEWS + " days.");
-
                         return null;
                     }
                 }
@@ -169,7 +168,6 @@ public class Review {
             }
             return review;
         } else {
-           // System.out.println("Hotel not supported: " + hotel);
             return null;
         }
     }

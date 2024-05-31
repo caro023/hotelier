@@ -23,7 +23,6 @@ import java.util.Properties;
 import java.util.Scanner;
 
 import utils.ListenMulticast;
-import utils.type;
 
 public class MainClient{
     // Percorso del file di configurazione del client.
@@ -96,7 +95,6 @@ public class MainClient{
         Properties prop = new Properties();
         prop.load(input);
         port = Integer.parseInt(prop.getProperty("port"));
-       // maxDelay = Integer.parseInt(prop.getProperty("maxDelay"));
         multicastPort = Integer.parseInt(prop.getProperty("multicastPort"));
         input.close();
     }

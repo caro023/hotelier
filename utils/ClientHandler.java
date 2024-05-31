@@ -27,14 +27,16 @@ public class ClientHandler implements Runnable {
             out.close();
             this.socket.close();
         } catch (Exception e) {
-            if(userInstance != null && userInstance.isLogged()){
-                userInstance.logout();
-            }
-            output("Si è verificato un errore");
             if(e instanceof NumberFormatException){
                 output("Si accettano solo recensioni numeriche");
+            }else{
+                if(userInstance != null && userInstance.isLogged()){
+                    userInstance.logout();
+                }
+                output("Si è verificato un errore");
+                System.err.printf("[WORKER] Errore: %s\n", e.getMessage());
             }
-            System.err.printf("[WORKER] Errore: %s\n", e.getMessage());
+
         }
     }
 
@@ -49,17 +51,24 @@ public class ClientHandler implements Runnable {
         str = str+ "Register <username> <password>\n"
                 +"Login <username> <password>\n"
                 +"Logout\n"
-                +"SearchHotel \"Nome Hotel\" \"Nome Città\n" +"SearchAllHotels \"Nome Città\"\n"
-                +"InsertReview\n"+"ShowMyBadges\n"+"Exit";
+                +"SearchHotel \"Nome Hotel\" \"Nome Città\"\n" +"SearchAllHotels \"Nome Città\"\n"
+                +"InsertReview \"Nome Hotel\" \"Nome Città\" x x x x x\n"+"ShowMyBadges\n"+"Exit\nLe x rappresentano numeri interi tra 1 e 5";
         output(str);
     }
 
     private void cmd() throws IOException {
-        System.out.println("In attesa di un comando");
-            String line = in.readLine().toLowerCase();
-            String[] args = line.split("\"");
-            String[] splitLine = args[0].split(" ");
-            switch(splitLine[0]){
+            String line = in.readLine().trim();
+            String [] splitLine = null;
+            String [] args = null;
+            if((line.split(" ")[0]).equalsIgnoreCase("register")||(line.split(" ")[0]).equalsIgnoreCase("login")){
+                splitLine = line.split(" ");
+            }
+            else{
+                line = line.toLowerCase();
+                 args = line.split("\"");
+                 splitLine = args[0].split(" ");
+            }
+            switch(splitLine[0].toLowerCase()){
                 case "register":
                     if(splitLine.length!=3) {
                         command(line);
@@ -116,7 +125,6 @@ public class ClientHandler implements Runnable {
                     }
                     Hotel hotel = Hotel.searchHotel(args[1],args[3]);
                     if(hotel==null) {
-                        //output("Hotel non trovato");
                         CopyOnWriteArrayList<Hotel> hotels = Hotel.searchAllHotels(args[3]);
                         if(hotels==null) {
                             output("Città non trovata");
@@ -173,14 +181,18 @@ public class ClientHandler implements Runnable {
                     //controllo se non inserisce numeri
                     for (int i = 0; i < 4; i++) {
                          double rating = Double.parseDouble(review[i]);
-                         if(rating<0|| rating>5) {
+                         if(rating<0||rating>5) {
                              output("Si accettano solo recensioni numeriche tra 1 e 5");
                              return;
                          }
                          SingleScores[i] = Double.parseDouble(review[i]);
                     }
-                    String c = userInstance.insertReview(hotel, Double.parseDouble(review[4]), SingleScores);
-                    output(c);
+                    double total = Double.parseDouble(review[4]);
+                    if(total<0||total>5) {
+                        output("Si accettano solo recensioni numeriche tra 1 e 5");
+                        return;
+                    }
+                    output(userInstance.insertReview(hotel,total, SingleScores));
                     break;
                 case "showmybadges":
                     if(splitLine.length!=1) {
@@ -206,13 +218,13 @@ public class ClientHandler implements Runnable {
         }
 
     private void output(String command){
-        if (command == null || command.trim().isEmpty()) {
+        if (command == null) {
             return;
         }
         out.println(command.replace("\n", "|"));
         out.flush();
     }
-    }
+}
 
 
 

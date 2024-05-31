@@ -136,6 +136,14 @@
     ]
   },
   {
+    "id": 113,
+    "name": "Hotel Roma 3",
+    "description": "Un grazioso hotel a Roma, in Via della fantasia, 1",
+    "city": "Roma",
+    "phone": "332-1286644",
+    "services": []
+  },
+  {
     "id": 111,
     "name": "Hotel Roma 1",
     "description": "Un bellissimo hotel a Roma, in Via Italia, 69",
@@ -156,14 +164,6 @@
       "Frigo in camera",
       "Posto auto"
     ]
-  },
-  {
-    "id": 113,
-    "name": "Hotel Roma 3",
-    "description": "Un grazioso hotel a Roma, in Via della fantasia, 1",
-    "city": "Roma",
-    "phone": "332-1286644",
-    "services": []
   },
   {
     "id": 114,
@@ -253,6 +253,20 @@
     ]
   },
   {
+    "id": 193,
+    "name": "Hotel Cagliari 3",
+    "description": "Un organizzato hotel a Cagliari, in Via Napoli, 86",
+    "city": "Cagliari",
+    "phone": "316-3284996",
+    "services": [
+      "Posto auto",
+      "Wi-Fi",
+      "Paga in struttura",
+      "Palestra",
+      "Cancellazione gratuita"
+    ]
+  },
+  {
     "id": 191,
     "name": "Hotel Cagliari 1",
     "description": "Un ridente hotel a Cagliari, in Via della gioia, 16",
@@ -275,20 +289,6 @@
     "services": [
       "Sauna",
       "Posto auto"
-    ]
-  },
-  {
-    "id": 193,
-    "name": "Hotel Cagliari 3",
-    "description": "Un organizzato hotel a Cagliari, in Via Napoli, 86",
-    "city": "Cagliari",
-    "phone": "316-3284996",
-    "services": [
-      "Posto auto",
-      "Wi-Fi",
-      "Paga in struttura",
-      "Palestra",
-      "Cancellazione gratuita"
     ]
   },
   {
@@ -2300,6 +2300,36 @@
     ]
   },
   {
+    "id": 57,
+    "name": "Hotel Venezia 7",
+    "description": "Un organizzato hotel a Venezia, in Via Leonardo da Vinci, 70",
+    "city": "Venezia",
+    "phone": "343-7969468",
+    "services": [
+      "Posto auto",
+      "TV in camera",
+      "Cancellazione gratuita",
+      "Frigo in camera",
+      "Palestra",
+      "Paga in struttura",
+      "Wi-Fi"
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Hotel Venezia 5",
+    "description": "Un bellissimo hotel a Venezia, in Via del tramonto, 15",
+    "city": "Venezia",
+    "phone": "386-5854078",
+    "services": [
+      "Wi-Fi",
+      "TV in camera",
+      "Palestra",
+      "Cancellazione gratuita",
+      "Servizio in camera"
+    ]
+  },
+  {
     "id": 53,
     "name": "Hotel Venezia 3",
     "description": "Un bellissimo hotel a Venezia, in Via della libertà, 0",
@@ -2345,20 +2375,6 @@
     "services": []
   },
   {
-    "id": 55,
-    "name": "Hotel Venezia 5",
-    "description": "Un bellissimo hotel a Venezia, in Via del tramonto, 15",
-    "city": "Venezia",
-    "phone": "386-5854078",
-    "services": [
-      "Wi-Fi",
-      "TV in camera",
-      "Palestra",
-      "Cancellazione gratuita",
-      "Servizio in camera"
-    ]
-  },
-  {
     "id": 60,
     "name": "Hotel Venezia 10",
     "description": "Un grazioso hotel a Venezia, in Via della gioia, 66",
@@ -2387,22 +2403,6 @@
       "Frigo in camera",
       "TV in camera",
       "Paga in struttura"
-    ]
-  },
-  {
-    "id": 57,
-    "name": "Hotel Venezia 7",
-    "description": "Un organizzato hotel a Venezia, in Via Leonardo da Vinci, 70",
-    "city": "Venezia",
-    "phone": "343-7969468",
-    "services": [
-      "Posto auto",
-      "TV in camera",
-      "Cancellazione gratuita",
-      "Frigo in camera",
-      "Palestra",
-      "Paga in struttura",
-      "Wi-Fi"
     ]
   },
   {
@@ -2551,19 +2551,6 @@
     ]
   },
   {
-    "id": 83,
-    "name": "Hotel Firenze 3",
-    "description": "Un bellissimo hotel a Firenze, in Via Roma, 45",
-    "city": "Firenze",
-    "phone": "313-7184050",
-    "services": [
-      "Servizio in camera",
-      "Frigo in camera",
-      "TV in camera",
-      "Cancellazione gratuita"
-    ]
-  },
-  {
     "id": 89,
     "name": "Hotel Firenze 9",
     "description": "Un bellissimo hotel a Firenze, in Via della libertà, 51",
@@ -2592,6 +2579,19 @@
       "Posto auto",
       "Servizio in camera",
       "Paga in struttura"
+    ]
+  },
+  {
+    "id": 83,
+    "name": "Hotel Firenze 3",
+    "description": "Un bellissimo hotel a Firenze, in Via Roma, 45",
+    "city": "Firenze",
+    "phone": "313-7184050",
+    "services": [
+      "Servizio in camera",
+      "Frigo in camera",
+      "TV in camera",
+      "Cancellazione gratuita"
     ]
   },
   {

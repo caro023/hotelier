@@ -11,8 +11,8 @@ public class TerminationHandler extends Thread {
     private final ExecutorService pool;
     private final ServerSocket serverSocket;
     private final JsonHandler JsonHandler;
-    private final updateBestHotel update;
-    public TerminationHandler(int maxDelay, ExecutorService pool, ServerSocket serverSocket, JsonHandler JsonHandler, updateBestHotel update)
+    private final ScheduledExecutorService update;
+    public TerminationHandler(int maxDelay, ExecutorService pool, ServerSocket serverSocket, JsonHandler JsonHandler, ScheduledExecutorService update)
         {
             this.maxDelay = maxDelay;
             this.pool = pool;
@@ -29,17 +29,23 @@ public class TerminationHandler extends Thread {
                      System.err.printf("[SERVER] Errore: %s\n", e.getMessage());
                 }
                 // Faccio terminare il pool di thread.
-                update.stop();
                 pool.shutdown();
+                update.shutdown();
                 try {
                     if (!pool.awaitTermination(maxDelay, TimeUnit.MILLISECONDS)) {
                         pool.shutdownNow();
                     }
+                    if (!update.awaitTermination(maxDelay, TimeUnit.MILLISECONDS)) {
+                        update.shutdownNow();
+                    }
             }
-            catch (InterruptedException e) {pool.shutdownNow();}
-                 System.out.println("[SERVER] Terminato.");
+            catch (InterruptedException e) {
+                    pool.shutdownNow();
+                    update.shutdownNow();
+                }
 
-               //  this.JsonHandler.hotelWriter();
+                System.out.println("[SERVER] Terminato.");
+
                 this.JsonHandler.infoWriter("hotel");
                 List<User> all = User.getAllUsers();
                 for(User u: all){

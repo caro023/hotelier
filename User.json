@@ -2,8 +2,8 @@
   {
     "username": "carolina",
     "password": "gr",
-    "badges": "RECENSORE_ESPERTO",
-    "nReview": 3
+    "badges": "RECENSORE",
+    "nReview": 4
   },
   {
     "username": "car",
@@ -12,44 +12,32 @@
     "nReview": 1
   },
   {
-    "username": "5",
-    "password": "e",
-    "badges": "RECENSORE",
-    "nReview": 0
-  },
-  {
-    "username": "fjej",
-    "password": "je",
-    "badges": "RECENSORE",
-    "nReview": 0
-  },
-  {
-    "username": "beppa",
-    "password": "bea",
+    "username": "Alessandro",
+    "password": "ferrari",
     "badges": "RECENSORE",
     "nReview": 1
   },
   {
-    "username": "gd",
-    "password": "ed",
+    "username": "mario",
+    "password": "fhrgd",
+    "badges": "RECENSORE",
+    "nReview": 1
+  },
+  {
+    "username": "luigi",
+    "password": "fhrheid",
     "badges": "RECENSORE",
     "nReview": 0
   },
   {
-    "username": "cart",
-    "password": "5",
+    "username": "Emma",
+    "password": "GfdRw%$",
     "badges": "RECENSORE",
     "nReview": 0
   },
   {
-    "username": "tr",
-    "password": "5",
-    "badges": "RECENSORE",
-    "nReview": 0
-  },
-  {
-    "username": "hrei",
-    "password": "je",
+    "username": "Mario",
+    "password": "Djeejd£3",
     "badges": "RECENSORE",
     "nReview": 0
   }

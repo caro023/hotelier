@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.*;
 
 public class updateBestHotel implements Runnable {
-    private volatile boolean run = true;
     private String multicastIP;
     private static int multicastPort;
     private static MulticastSocket socket;
@@ -19,19 +18,16 @@ public class updateBestHotel implements Runnable {
 
     @Override
     public void run() {
-        while(run) {
             for (String city : Hotel.getAllCity()) {
                 Hotel hotel = Hotel.updateBest(city);
                 if (hotel != null) {
                     try {
-                        String message = "Nuovo hotel migliore a " + city + ": " + hotel.getName();
-                        sendMessage(message);
+                        send(city, hotel);
                     } catch (IOException e) {
                         System.err.println("Errore nell'invio del messaggio multicast: " + e.getMessage());
                     }
                 }
             }
-        }
     }
     public static void sendMessage(String message) throws IOException {
         DatagramSocket dataSocket = new DatagramSocket();
@@ -46,8 +42,5 @@ public class updateBestHotel implements Runnable {
         sendMessage(message);
     }
 
-    public void stop(){
-        this.run = false;
-    }
 }
 

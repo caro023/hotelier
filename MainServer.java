@@ -22,9 +22,6 @@ import java.net.SocketException;
 import java.util.Properties;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.*;
-//import utils.TerminationHandler;
-//import utils.JsonHandler;
-//import utils.ClientHandler;
 
 
  public class MainServer{
@@ -58,8 +55,8 @@ import java.util.concurrent.*;
         Review.setDayReview(minDayReview);
         ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
         updateBestHotel update = new updateBestHotel(multicastIP,multicastPort);
-        scheduler.scheduleAtFixedRate(update,10, updateRank, TimeUnit.MINUTES);
-        Runtime.getRuntime().addShutdownHook(new TerminationHandler(maxDelay,pool, serverSocket, jsonHandler,update));
+        scheduler.scheduleAtFixedRate(update,0, updateRank, TimeUnit.MINUTES);
+        Runtime.getRuntime().addShutdownHook(new TerminationHandler(maxDelay,pool, serverSocket, jsonHandler,scheduler));
         System.out.printf("[SERVER] In ascolto sulla porta: %d\n", port);
         while (true) {
             Socket socket;

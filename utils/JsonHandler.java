@@ -9,7 +9,6 @@ public class JsonHandler {
     private static String fileHotel;
     private static String fileUser;
     private static String fileReview;
-    private static String fileCity;
 
     public JsonHandler(String fileHotel, String fileUser, String fileReview, String fileCity){
         //mettere direttamente qui il nome dei file
@@ -17,7 +16,6 @@ public class JsonHandler {
         JsonHandler.fileUser = fileUser;
         //se riesci quando serializzi memorizza solo il nome dell'hotel e l'username del recensore e tramite le funzioni get user,gethotel lo inizializzi
         JsonHandler.fileReview = fileReview;
-        JsonHandler.fileCity = fileCity;
         userReader();
         Hotel.initializeHotels(fileCity);
         hotelReader();
@@ -71,21 +69,6 @@ public class JsonHandler {
         }
     }
 
-
- /*   public void hotelWriter(){
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        File jsonFile  = new File(fileHotel);
-
-        try(OutputStream outputStream = new FileOutputStream(jsonFile)){
-            List<Hotel> allHotels = Hotel.getAllHotels();
-            String json = gson.toJson(allHotels);
-            outputStream.write(json.getBytes());
-            outputStream.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-           }
-
-    }*/
     public void infoWriter(String tipo){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         File jsonFile = null;
@@ -113,17 +96,4 @@ public class JsonHandler {
         }
 
     }
-        //public get User
-
-        //listof users è una hashmap con tutti gli utenti
-        public static synchronized void updateFileUser(ConcurrentHashMap<String,User> user){
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        File jsonFile = new File(fileUser);
-
-       try(OutputStream outputStream = new FileOutputStream(jsonFile)){
-         outputStream.write(gson.toJson(user.values().toArray()).getBytes());
-         outputStream.flush();
-
-      }catch(IOException e){e.printStackTrace();}
-   }
 }
