@@ -8,8 +8,9 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+//classe per rappresentare gli hotels
 public class Hotel {
-    
+    //attributi relativi a un hotel
     private int id;
     private String name;
     private String description;
@@ -17,13 +18,16 @@ public class Hotel {
     private String phone;
     private String[] services;
     private transient double rate = 0;
-    private transient Map<String, Double> ratings = new HashMap<>();
-    private static final ConcurrentHashMap< String, CopyOnWriteArrayList<Hotel>> hotels = new ConcurrentHashMap<>();
-    private static final HashMap<String,Hotel> bestHotel = new HashMap<>();
     private transient double totalScore;
     private transient int totalVote;
     private transient LocalDateTime timeReview = null;
+    private transient ConcurrentHashMap<String, Double> ratings = new ConcurrentHashMap<>();
+    //HashMap statica con tutti gli hotels divisi per città
+    private static final ConcurrentHashMap< String, CopyOnWriteArrayList<Hotel>> hotels = new ConcurrentHashMap<>();
+    //HashMap statica con i migliori hotels per città
+    private static final HashMap<String,Hotel> bestHotel = new HashMap<>();
 
+    //metodi getter e setter
     public int getId() {
         return id;
     }
@@ -56,7 +60,6 @@ public class Hotel {
         this.totalVote = this.totalVote + 1;
     }
 
-    // Getter e setter per il nome
     public String getName() {
         return name;
     }
@@ -65,7 +68,6 @@ public class Hotel {
         this.name = name;
     }
 
-    // Getter e setter per la descrizione
     public String getDescription() {
         return description;
     }
@@ -74,7 +76,6 @@ public class Hotel {
         this.description = description;
     }
 
-    // Getter e setter per la città
     public String getCity() {
         return city;
     }
@@ -83,7 +84,6 @@ public class Hotel {
         this.city = city;
     }
 
-    // Getter e setter per il numero di telefono
     public String getPhone() {
         return phone;
     }
@@ -92,7 +92,6 @@ public class Hotel {
         this.phone = phone;
     }
 
-    // Getter e setter per i servizi
     public String[] getServices() {
         return services;
     }
@@ -101,7 +100,6 @@ public class Hotel {
         this.services = services;
     }
 
-    // Getter e setter per il tasso
     public double getRate() {
         return rate;
     }
@@ -110,12 +108,12 @@ public class Hotel {
         this.rate= rate/totalVote;
     }
 
+    //ricalcola la media aggiungendo un punteggio
     public void addRate(double rate) {
-        //controlla che quanod viene chiamato totalVote è diverso da 0
+        //quando è chiamato totalVote è diverso da 0
         this.rate = (((this.rate*(this.totalVote-1))+rate)/this.totalVote) ;
     }
 
-        // Getter e setter per le valutazioni
     public Map<String, Double> getRatings() {
         return ratings;
     }
@@ -127,6 +125,7 @@ public class Hotel {
         this.ratings.put("quality", ratings[3]);
     }
 
+    //ricalcola la media aggiungendo dei punteggi
     public void addRatings(double[] singleScores) {
         this.ratings.put("cleaning", updateAverage(this.ratings.get("cleaning"), singleScores[0]));
         this.ratings.put("service", updateAverage(this.ratings.get("position"), singleScores[1]));
@@ -134,10 +133,19 @@ public class Hotel {
         this.ratings.put("quality", updateAverage(this.ratings.get("quality"), singleScores[3]));
     }
 
+    //inizializza i punteggi a 0
+    private void initializeRatings() {
+        this.ratings.put("cleaning", 0.0);
+        this.ratings.put("position", 0.0);
+        this.ratings.put("service", 0.0);
+        this.ratings.put("quality", 0.0);
+    }
+
     private double updateAverage(double currentAverage, double newScore) {
         return (double) Math.round((((currentAverage*(this.totalVote-1)) + newScore) / this.totalVote) * 100) /100;
     }
 
+    //restituisce tutti gli hotel presenti
     public static List<Hotel> getAllHotels() {
         List<Hotel> allHotels = new ArrayList<>();
         for (CopyOnWriteArrayList<Hotel> cityHotels : hotels.values()) {
@@ -146,7 +154,6 @@ public class Hotel {
         return allHotels;
     }
 
-    //non è case sensitive, si rinuncia all'ottimizzazione non usando containsekey
     public static Hotel searchHotel(String nome,String città){
         if(Hotel.hotels.containsKey(città)){
                 CopyOnWriteArrayList<Hotel> cittàHotel = hotels.getOrDefault(città, null);
@@ -155,7 +162,6 @@ public class Hotel {
                         return hotel;
                     }
                 }
-                //return searchAllHtel(città) e converti in stringa
             }
         return null;
 
@@ -165,9 +171,9 @@ public class Hotel {
         return Hotel.hotels.getOrDefault(città, null);
     }
 
+    //inserisce un hotel nell'HashMap
     public void setHotel(){
         String city = this.getCity().toLowerCase();
-
         if (hotels.containsKey(city)) {
             CopyOnWriteArrayList<Hotel> cityHotels = hotels.get(city);
             this.initializeRatings();
@@ -177,19 +183,14 @@ public class Hotel {
         }
     }
 
-    private void initializeRatings() {
-        this.ratings.put("cleaning", 0.0);
-        this.ratings.put("position", 0.0);
-        this.ratings.put("service", 0.0);
-        this.ratings.put("quality", 0.0);
-    }
-
+    //restituisce le città in cui sono presenti hotels
     public static List<String> getAllCity(){
         List<String> allCity = new ArrayList<>();
         allCity.addAll(hotels.keySet());
         return allCity;
     }
 
+    //inizializza l'HashMap con colo le città supportate
     public static void initializeHotels(String listCity) {
         try (BufferedReader br = new BufferedReader(new FileReader(listCity))) {
             String city;
@@ -201,6 +202,7 @@ public class Hotel {
         }
     }
 
+    //ordina gli hotel in una città
     public static void sortHotel(String city){
         city = city.toLowerCase();
         CopyOnWriteArrayList<Hotel> hotelsInCity = Hotel.hotels.getOrDefault(city, null);
@@ -209,6 +211,7 @@ public class Hotel {
         }
     }
 
+    //inizializza i migliori hotel dopo l'avvio
     public static void initializeBest() {
         for (Map.Entry<String, CopyOnWriteArrayList<Hotel>> entry : hotels.entrySet()) {
             String city = entry.getKey();
@@ -222,6 +225,7 @@ public class Hotel {
         }
     }
 
+    //aggiorna il migliore hotel di una città
     public static Hotel updateBest(String city) {
         city = city.trim().toLowerCase();
         if (!hotels.containsKey(city)) {
@@ -229,21 +233,20 @@ public class Hotel {
             return null;
         }
         Hotel newHotel = Hotel.hotels.get(city).getFirst();
-        Hotel currentBestHotel = bestHotel.get(city);
-        if (currentBestHotel == null || !currentBestHotel.equals(newHotel)) {
-            bestHotel.put(city, newHotel);
-            return newHotel;
+        synchronized (bestHotel) {
+            Hotel currentBestHotel = bestHotel.get(city);
+            if (currentBestHotel == null || !currentBestHotel.equals(newHotel)) {
+                bestHotel.put(city, newHotel);
+                return newHotel;
+            }
+            return null;
         }
-        return null;
     }
 
-    /**
-     * @Override
-     * Metodo per la costruzione di una versione pretty del toString
-     * @return un pretty print di un istanza di hotel
-     */
+    //override per creare una stringa di un'istanza di hotel
+     @Override
     public String toString(){
-        String result = String.format("%s\n%s\ntelefono: %s\nGlobal Rate: %.2f\nServizi Offerti:\n",this.getName(),this.getDescription(),this.getPhone(),this.getRate());
+        String result = String.format("%s\n%s\nTelefono: %s\nGlobal Score: %.2f\nServizi Offerti:\n",this.getName(),this.getDescription(),this.getPhone(),this.getRate());
         
         for(String service : this.getServices()){
             result = result + "\t" + service + "\n";
@@ -253,6 +256,8 @@ public class Hotel {
             result=result + String.format("%s: %.2f\n", entry.getKey(), entry.getValue());
         return result;
     }
+
+    //override dei metodi per consentire il confronto per nome e città
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -266,5 +271,4 @@ public class Hotel {
     public int hashCode() {
         return Objects.hash(name, city);
     }
-
 }

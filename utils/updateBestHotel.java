@@ -4,20 +4,17 @@ import java.io.IOException;
 import java.net.*;
 
 public class updateBestHotel implements Runnable {
-    private String multicastIP;
     private static int multicastPort;
-    private static MulticastSocket socket;
     private static InetAddress group;
 
     public updateBestHotel (String multicastIP, int multicastPort) throws UnknownHostException {
-        this.multicastIP = multicastIP;
         this.multicastPort = multicastPort;
-        this.socket = null;
         this.group = InetAddress.getByName(multicastIP);;
     }
 
     @Override
     public void run() {
+        //controlla se è cambiato un hotel primo in classifica per città
             for (String city : Hotel.getAllCity()) {
                 Hotel hotel = Hotel.updateBest(city);
                 if (hotel != null) {
@@ -29,6 +26,8 @@ public class updateBestHotel implements Runnable {
                 }
             }
     }
+
+    //crea e invia un messaggio sul gruppo
     public static void sendMessage(String message) throws IOException {
         DatagramSocket dataSocket = new DatagramSocket();
         byte[] buffer = message.getBytes();
@@ -37,6 +36,7 @@ public class updateBestHotel implements Runnable {
         dataSocket.close();
     }
 
+    //crea la stringa da mandare
     public static void send(String city, Hotel hotel) throws IOException {
         String message = "Nuovo hotel migliore a " + city + ": " + hotel.getName();
         sendMessage(message);

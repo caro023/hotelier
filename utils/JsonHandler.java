@@ -1,40 +1,45 @@
 package utils;
 import java.io.*;
 import java.util.List;
-import java.util.concurrent.ConcurrentHashMap;
 import com.google.gson.*;
 
-
+//si crea un'unica istanza
 public class JsonHandler {
     private static String fileHotel;
     private static String fileUser;
     private static String fileReview;
 
     public JsonHandler(String fileHotel, String fileUser, String fileReview, String fileCity){
-        //mettere direttamente qui il nome dei file
         JsonHandler.fileHotel = fileHotel;
         JsonHandler.fileUser = fileUser;
-        //se riesci quando serializzi memorizza solo il nome dell'hotel e l'username del recensore e tramite le funzioni get user,gethotel lo inizializzi
         JsonHandler.fileReview = fileReview;
+        //deserializza utenti
         userReader();
+        //inizializza l'HashMap per gli hotels
         Hotel.initializeHotels(fileCity);
+        //deserializza hotels e recensioni
         hotelReader();
     }
 
-    //mettere hotel e user reader nella stessa funzione
         private void hotelReader(){
             try{
                 FileReader reader = new FileReader(fileHotel);
                 Gson gson = new Gson();
                 for(Hotel hotel : gson.fromJson(reader, Hotel[].class)){
+                    //inserisce hotel nel sistema
                     hotel.setHotel();
                 }
+                //inizializza l'HashMap per le recensioni
                 Review.initializeReview();
+                //deserializza recensioni
                 reviewReader();
+                //inizializza il punteggio degli hotel
                 Review.initializeHotelScore();
                 for(String city: Hotel.getAllCity()){
+                    //ordina hotel per città
                     Hotel.sortHotel(city);
                 }
+                //inizializza i migliori hotel per città
                 Hotel.initializeBest();
             }catch(Exception e){
                 System.out.println(e.getMessage());
@@ -47,6 +52,7 @@ public class JsonHandler {
             FileReader reader = new FileReader(fileUser);
             Gson gson = new Gson();
             for(User user : gson.fromJson(reader, User[].class)){
+                //inserisce utenti nel sistema
                 user.setUser();
             }
         }catch(Exception e){
@@ -60,6 +66,7 @@ public class JsonHandler {
             FileReader reader = new FileReader(fileReview);
             Gson gson = new Gson();
             for(Review review : gson.fromJson(reader, Review[].class)){
+                //inserisce recensioni nel sistema
                 review.setReview();
             }
 
@@ -69,6 +76,7 @@ public class JsonHandler {
         }
     }
 
+    //metodo per la serializzazione
     public void infoWriter(String tipo){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         File jsonFile = null;

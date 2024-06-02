@@ -1,17 +1,3 @@
-/*
- * register(user,pass) il server risponde con un codice, errore se user già presente o pass vuota
- * login(user,pass) codice di successo, se ha già effettuato il login e la password
- * logout(user)
- * searchHotel(nome,città) cerca dati di un hotel e li invia. Anche per utenti non loggati
- * searchAllHotels(città) ordinati per ranking. Anche per utenti non loggati
- * insertReview(nomeHotel, nomeCittà, GlobalScore,[ ]SingleScore) utente deve avere il login
- * showMyBadges() mostra i distintivo all'utente loggato
- * registrazione con connessione tcp con il server
- * dopo la registrazione subito il login. Dopo Il client si registra a un servizio di notifica multicast
- * CODICE BEN COMMENTATO
- * SOLO CODICE SORGENTE, NON FILE CREATI DALL'IDE PER GESTIRE IL PROGETTO
- * ALLEGARE LIBRERIE ESTERNE(GSON)
- */
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -25,27 +11,26 @@ import java.util.Scanner;
 import utils.ListenMulticast;
 
 public class MainClient{
-    // Percorso del file di configurazione del client.
+    //percorso del file di configurazione del client.
     public static final String configFile = "client.properties";
-    // Variabile globale che rappresenta lo stato corrente.
-    // Nome host e porta del server.
     public static String hostname; // localhost
-    public static int port;// 12000
+    public static int port;
+    //scanner per leggere l'input
+    private static final Scanner scanner = new Scanner(System.in);
+    //attributi per il multicast
     private static int multicastPort;
     private static final String multicastIP = "224.0.0.0";
 
-    // Socket e relativi stream di input/output.
-    private static final Scanner scanner = new Scanner(System.in);
-    //multicast
-
     public static void main(String[] args) {
     try {
+        //lettura file properties
         readConfig();
+        //creazione socket
         Socket socket = new Socket(hostname, port);
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
         ListenMulticast listener = null;
-
+        //stampa il comando di benvenuto
         System.out.println(in.readLine().replace("|", "\n"));
 
         while (true) {
@@ -58,6 +43,7 @@ public class MainClient{
                 //comando di uscita
                 if(line.equals("exit")) {
                     if(listener != null){
+                        //interrompe thread per il gruppo multicast
                         listener.leaveGroup();
                         listener.interrupt();
                         listener.join();
@@ -66,13 +52,13 @@ public class MainClient{
                     System.out.println(in.readLine().replace("|", "\n"));
                     break;
                 }
-
                 line = line.replace("|", "\n");
                 if(line.equals("Login effettuato")||line.equals("Registrazione effettuata")){
                     if(listener != null){
                         listener.interrupt();
                         listener.join();
                     }
+                    //join al gruppo multicast
                     listener = new ListenMulticast(multicastIP,multicastPort);
                     listener.start();
                 }

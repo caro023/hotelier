@@ -21,15 +21,16 @@ public class TerminationHandler extends Thread {
             this.update = update;
         }
         public void run() {
-            // Avvio la procedura di terminazione del server.
+            //avvia la procedura di terminazione del server
             System.out.println("[SERVER] Avvio terminazione...");
-            // Chiudo la ServerSocket in modo tale da non accettare piu' nuove richieste.
+            //chiusura socket
             try {serverSocket.close();}
                 catch (IOException e) {
                      System.err.printf("[SERVER] Errore: %s\n", e.getMessage());
                 }
-                // Faccio terminare il pool di thread.
+                //terminare il pool
                 pool.shutdown();
+                //termina lo scheduler
                 update.shutdown();
                 try {
                     if (!pool.awaitTermination(maxDelay, TimeUnit.MILLISECONDS)) {
@@ -45,10 +46,11 @@ public class TerminationHandler extends Thread {
                 }
 
                 System.out.println("[SERVER] Terminato.");
-
+                //serializza le informazioni presenti di hotel, utenti e recensioni
                 this.JsonHandler.infoWriter("hotel");
                 List<User> all = User.getAllUsers();
                 for(User u: all){
+                    //forza il logout
                     if(u.isLogged()){
                         u.logout();
                     }

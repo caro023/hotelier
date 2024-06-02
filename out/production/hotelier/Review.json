@@ -65,6 +65,19 @@
     "city": "Firenze"
   },
   {
+    "rate": 4.0,
+    "ratings": [
+      5.0,
+      4.0,
+      3.0,
+      4.0
+    ],
+    "date": "2024-06-01 16:10",
+    "userName": "Roberta",
+    "nameHotel": "Hotel Firenze 10",
+    "city": "Firenze"
+  },
+  {
     "rate": 3.0,
     "ratings": [
       4.0,
