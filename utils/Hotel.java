@@ -56,7 +56,7 @@ public class Hotel {
        this.timeReview = time;
     }
 
-    public void updateVote() {
+    synchronized void updateVote() {
         this.totalVote = this.totalVote + 1;
     }
 
@@ -109,7 +109,7 @@ public class Hotel {
     }
 
     //ricalcola la media aggiungendo un punteggio
-    public void addRate(double rate) {
+    synchronized void addRate(double rate) {
         //quando è chiamato totalVote è diverso da 0
         this.rate = (((this.rate*(this.totalVote-1))+rate)/this.totalVote) ;
     }
@@ -126,7 +126,7 @@ public class Hotel {
     }
 
     //ricalcola la media aggiungendo dei punteggi
-    public void addRatings(double[] singleScores) {
+    synchronized void addRatings(double[] singleScores) {
         this.ratings.put("cleaning", updateAverage(this.ratings.get("cleaning"), singleScores[0]));
         this.ratings.put("service", updateAverage(this.ratings.get("position"), singleScores[1]));
         this.ratings.put("position", updateAverage(this.ratings.get("service"), singleScores[2]));
@@ -232,8 +232,8 @@ public class Hotel {
             System.out.println("City not supported: " + city);
             return null;
         }
-        Hotel newHotel = Hotel.hotels.get(city).getFirst();
         synchronized (bestHotel) {
+            Hotel newHotel = Hotel.hotels.get(city).getFirst();
             Hotel currentBestHotel = bestHotel.get(city);
             if (currentBestHotel == null || !currentBestHotel.equals(newHotel)) {
                 bestHotel.put(city, newHotel);

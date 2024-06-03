@@ -1,9 +1,7 @@
 package utils;
 
 import java.io.IOException;
-import java.net.DatagramPacket;
-import java.net.InetAddress;
-import java.net.MulticastSocket;
+import java.net.*;
 import java.nio.charset.StandardCharsets;
 
 public class ListenMulticast extends Thread {
@@ -41,7 +39,7 @@ public class ListenMulticast extends Thread {
         try {
             this.socket = new MulticastSocket(multicastPort);
             this.group = InetAddress.getByName(multicastIP);
-            this.socket.joinGroup(this.group);
+            this.socket.joinGroup(new InetSocketAddress(group, multicastPort), NetworkInterface.getByInetAddress(group));
         } catch (IOException e) {
             System.err.println("Errore durante l'unione al gruppo multicast: " + e.getMessage());
         }
@@ -50,7 +48,7 @@ public class ListenMulticast extends Thread {
     public void leaveGroup() {
         try {
             this.listening=false;
-            this.socket.leaveGroup(this.group);
+            this.socket.leaveGroup(new InetSocketAddress(group, multicastPort), NetworkInterface.getByInetAddress(group));
             this.socket.close();
         } catch (IOException e) {
 

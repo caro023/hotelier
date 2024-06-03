@@ -25,6 +25,7 @@ public class Review {
     private static final ConcurrentHashMap<Hotel, CopyOnWriteArrayList<Review>> hotelReview = new ConcurrentHashMap<Hotel, CopyOnWriteArrayList<Review>>();
     //tempo minimo tra due recensioni dello stesso utente per lo stesso hotel
     private static Integer MIN_DAYS_BETWEEN_REVIEWS = null;
+    private static final Object lock = new Object();
 
     public Review(double rate, double[] ratings, String date, String userName, String nameHotel, String city) {
         this.rate = rate;
@@ -156,8 +157,8 @@ public class Review {
         //Pesi per ciascun parametro
         double weightRate = 0.5;
         double weightRatings = 0.5;
-        double weightDaysDifference = -0.1; // Peso negativo per penalizzare recensioni vecchie
-        double weightTotalReviews = 0.1;
+        double weightDaysDifference = -0.2; // Peso negativo per penalizzare recensioni vecchie
+        double weightTotalReviews = 0.2;
         //normalizzo il rate da 0 a 100
         rate *= 20;
         double totRatings = 0;
@@ -201,24 +202,27 @@ public class Review {
             hotel.updateVote();
             hotel.addRate(rate);
             hotel.addRatings(ratings);
-            LocalDateTime dateTime =hotel.getTimeReview();
-            if(dateTime!= null){ //hotel con altre recensioni
-            long day = ChronoUnit.DAYS.between(dateTime, now);
-            //ricalcolo media dei giorni
-            day = day*hotel.getTotalVote()/(hotel.getTotalVote()+1);
-            //calcolo punteggio
-            calculateHotelScore(hotel,rate,ratings,day);
-            LocalDateTime avgDate = now.minusDays(day);
-            hotel.setTimeReview(avgDate);
-            }else {
-                //calcolo punteggio
-                calculateHotelScore(hotel,rate,ratings,0);
-                hotel.setTimeReview(now);
+            //si sincronizza per evitare letture e scritture sbagliate sulla data
+            synchronized (lock) {
+                LocalDateTime dateTime = hotel.getTimeReview();
+                if (dateTime != null) { //hotel con altre recensioni
+                    long day = ChronoUnit.DAYS.between(dateTime, now);
+                    //ricalcolo media dei giorni
+                    day = day * hotel.getTotalVote() / (hotel.getTotalVote() + 1);
+                    //calcolo punteggio
+                    calculateHotelScore(hotel, rate, ratings, day);
+                    LocalDateTime avgDate = now.minusDays(day);
+                    hotel.setTimeReview(avgDate);
+                } else {
+                    //calcolo punteggio
+                    calculateHotelScore(hotel, rate, ratings, 0);
+                    hotel.setTimeReview(now);
+                }
+                //riordina gli hotel della città
+                Hotel.sortHotel(hotel.getCity());
             }
-            //riordina gli hotel della città
-            Hotel.sortHotel(hotel.getCity());
-            //controlla se è cambiato il primo in classifica
-            Hotel best = Hotel.updateBest(hotel.getCity());
+                //controlla se è cambiato il primo in classifica
+                Hotel best = Hotel.updateBest(hotel.getCity());
             if(best!= null){
                 //lo notifica al gruppo multicast
                 updateBestHotel.send(best.getCity(),best);

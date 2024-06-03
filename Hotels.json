@@ -136,6 +136,21 @@
     ]
   },
   {
+    "id": 114,
+    "name": "Hotel Roma 4",
+    "description": "Un bellissimo hotel a Roma, in Via della libertà, 86",
+    "city": "Roma",
+    "phone": "393-9634719",
+    "services": [
+      "Posto auto",
+      "Wi-Fi",
+      "Servizio in camera",
+      "Palestra",
+      "TV in camera",
+      "Paga in struttura"
+    ]
+  },
+  {
     "id": 113,
     "name": "Hotel Roma 3",
     "description": "Un grazioso hotel a Roma, in Via della fantasia, 1",
@@ -163,21 +178,6 @@
       "Piscina",
       "Frigo in camera",
       "Posto auto"
-    ]
-  },
-  {
-    "id": 114,
-    "name": "Hotel Roma 4",
-    "description": "Un bellissimo hotel a Roma, in Via della libertà, 86",
-    "city": "Roma",
-    "phone": "393-9634719",
-    "services": [
-      "Posto auto",
-      "Wi-Fi",
-      "Servizio in camera",
-      "Palestra",
-      "TV in camera",
-      "Paga in struttura"
     ]
   },
   {

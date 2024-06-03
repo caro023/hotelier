@@ -1,19 +1,3 @@
-/*
- * carica da file json la descrizione degli hotels
- * gestisce registrazione e login utenti
- * effettua ricerche
- * ha info su hotel e utenti
- * memorizza recensioni e aggiorna il calcolo delle recensioni dell'utente per attribuzione distintivi
- * aggiorna il ranking(parametro di input tempo tra due aggiornamenti)
- * quando cambia il primo classificato in un ranking locale invia notifica agli utenti loggati---> secondo connessione UDP su un gruppo multicast
- * si può implementare con NIO o java I/O e threadpool
- * i file per la memorizzazione degli utenti e dei contenuti memorizzano le info in formato json
- * CODICE BEN COMMENTATO
- * CLASSI CON MAIN LO DEVONO AVERE NEL NOME
- * CONSEGNARE FILE JAR PER OGNI APPLICAZIONE
- * PARAMETRI DI INPPUT LETTI AUTONOMAMENTE DA FILE TESTUALI
- * COLLEGARE LIBRERIE ESTERNE
- * */
 import utils.*;
 import java.io.*;
 import java.net.ServerSocket;
